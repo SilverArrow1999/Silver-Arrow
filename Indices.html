@@ -278,10 +278,17 @@ user-select: none;
     width: 90%;
     max-width: none;
   }
-canvas {
-  width: 100% !important;
-  height: 300px !important; /* Höhe für bessere Lesbarkeit auf dem Handy */
+.chart-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
+
+canvas {
+  width: 600px !important;  /* Fixe Breite für Scrollen */
+  height: 300px !important; /* Höhe wie vorher, damit die Balken gut sichtbar sind */
+}
+
 
 
   .background-logo {
