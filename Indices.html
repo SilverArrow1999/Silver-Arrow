@@ -195,37 +195,67 @@ max-width: 1200px;
 pointer-events: none;
 user-select: none;
 }
-/* Responsive für kleine Bildschirme (Handys) */
 @media (max-width: 600px) {
   header {
-    flex-direction: column;
-    align-items: center;
     padding: 15px 20px;
-    text-align: center;
+    flex-direction: column;
+    /* Je nachdem: center oder flex-start */
+    align-items: center; /* oder flex-start */
+    gap: 10px;
+    width: 100%;
   }
   header h1 {
     font-size: 1.5rem;
   }
   header h1 span.slogan {
     font-size: 1rem;
+    margin-top: 3px;
   }
   header img {
     height: 60px;
-    margin-top: 10px;
+    /* align-self oder margin-top */
+    align-self: flex-end;
+    margin-top: 10px; /* je nachdem was besser aussieht */
+  }
+
+  nav {
+    padding: 10px;
   }
   nav .nav-list {
     flex-direction: column;
-    gap: 10px;
-    padding: 0;
+    gap: 15px;
+    align-items: center;
   }
-  nav .nav-list a {
-    font-size: 1.1rem;
-    padding: 10px;
-  }
+
   main {
     padding: 15px 10px;
     max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
+
+  /* Für Startseite */
+  .intro {
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 15px;
+  }
+  .feature-section {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 20px;
+  }
+  .feature-card {
+    width: 100%;
+    padding: 20px;
+  }
+  .disclaimer {
+    max-width: 100%;
+    padding: 0 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Für Strategie-Seite */
   .strategy-overview {
     padding: 15px;
     margin: 10px;
@@ -246,11 +276,14 @@ user-select: none;
     width: 100% !important;
     height: auto !important;
   }
+
   .background-logo {
     top: 100px;
     width: 100%;
+    max-width: none;
   }
 }
+
   
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
