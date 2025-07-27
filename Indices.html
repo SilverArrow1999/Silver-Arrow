@@ -269,15 +269,26 @@ user-select: none;
   width: 100%;
 }
 
+ @media (max-width: 600px) {
+  ...
   .signal-section {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    width: 100%;            /* Container nimmt volle Breite */
+    box-sizing: border-box; /* Padding/Borders werden mitgerechnet */
+    padding: 0 10px;        /* Innenabstand links/rechts */
   }
   .signal-card {
-    width: 90%;
-    max-width: none;
+    width: 100%;            /* Volle Breite des Containers */
+    max-width: 400px;       /* max. Breite, damit es nicht zu breit wird */
+    box-sizing: border-box;
+    margin: 0 auto;         /* zentriert die Karte horizontal */
+    padding: 20px;          /* Innenabstand in der Karte */
   }
+  ...
+}
+
 .chart-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
