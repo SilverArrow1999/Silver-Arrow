@@ -297,6 +297,17 @@ canvas {
     max-width: none;
   }
 }
+  @media (max-width: 768px) {
+  .chart-container {
+    overflow-x: auto;       /* horizontales Scrollen erlauben */
+    -webkit-overflow-scrolling: touch; /* für flüssiges Scrollen auf iOS */
+    width: 100%;            /* volle Breite des Containers */
+  }
+  .chart-container canvas {
+    min-width: 900px;       /* mindestens so breit wie dein Chart */
+  }
+}
+
 
   
 </style>
@@ -339,7 +350,10 @@ Ob als Ergänzung zu klassischen ETF-Sparplänen oder als eigenständige Strateg
 </p>
 
 </section>
-<canvas id="performanceChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
+<div class="chart-container">
+  <canvas id="performanceChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
+</div>
+
 <h2>S&P 500 Strategie vs. Sparplan</h2>
 <table class="performance-table" aria-label="Jahresrenditen S&P 500 Strategien">
 <thead>
