@@ -87,7 +87,6 @@
   </form>
 
   <script>
-    // Extra-Felder einblenden je nach Kanal
     function updateContactField() {
       const channel = document.getElementById("channel").value;
       const extraField = document.getElementById("extraField");
@@ -106,14 +105,24 @@
       }
     }
 
-    // Formular abfangen und per fetch() an FormSubmit senden
     document.getElementById("signalForm").addEventListener("submit", function(e) {
-      e.preventDefault(); // Standard verhindern
+      e.preventDefault();
 
       const formData = new FormData(this);
+
+      // Hier _next Parameter setzen → Ziel: Stripe Checkout
+      formData.append("_next", "https://buy.stripe.com/5kQ14f1391n42zieM05J600");
 
       fetch("https://formsubmit.co/xxs.i.l.v.e.r.a.r.r.o.w.1.9.9.9xx@gmail.com", {
         method: "POST",
         body: formData
       }).then(() => {
-        // Nach erfolgreichem Versa
+        // Optional: manuell weiterleiten, falls FormSubmit-Redirect nicht klappt
+        window.location.href = "https://buy.stripe.com/5kQ14f1391n42zieM05J600";
+      }).catch(() => {
+        alert("Fehler beim Senden. Bitte erneut versuchen.");
+      });
+    });
+  </script>
+</body>
+</html>
