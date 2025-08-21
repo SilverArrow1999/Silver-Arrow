@@ -11,11 +11,79 @@
       color: silver;
       margin: 0;
       padding: 0;
+      position: relative;
+    }
+    header {
+      background-color: #111;
+      color: silver;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 3;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    header img {
+      height: 80px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    header h1 span.slogan {
+      font-weight: normal;
+      font-size: 1.2rem;
+      color: #bbb;
+      margin-top: 5px;
+      font-style: italic;
+    }
+    nav {
+      background-color: #222;
+      padding: 10px 20px;
+      z-index: 4;
+    }
+    .nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    .nav-list a {
+      color: silver;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .nav-list a:hover,
+    .nav-list a:focus {
+      background-color: #4caf50;
+      color: white;
+      outline: none;
+    }
+    .nav-list a.active {
+      background-color: #45a049;
+      color: white;
     }
     main {
       padding: 20px;
+      z-index: 2;
       max-width: 600px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    main h2 {
+      text-align: center;
+      color: silver;
+      margin-bottom: 30px;
     }
     form {
       background: #111;
@@ -31,19 +99,23 @@
       font-weight: 600;
       margin-bottom: 6px;
     }
-    input, select {
+    input[type="text"],
+    input[type="email"],
+    select {
       background-color: #222;
       border: 1px solid #444;
       border-radius: 6px;
       color: silver;
       padding: 10px;
       font-size: 1rem;
+      transition: border-color 0.3s ease;
     }
-    input:focus, select:focus {
+    input:focus,
+    select:focus {
       border-color: #4caf50;
       outline: none;
     }
-    button {
+    button[type="submit"] {
       background-color: #4caf50;
       color: white;
       border: none;
@@ -52,16 +124,15 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-top: 10px;
     }
-    button:hover {
+    button[type="submit"]:hover {
       background-color: #45a049;
-    }
-    .hidden {
-      display: none;
     }
     .checkbox-label {
       font-weight: normal;
       font-size: 0.9rem;
+      color: silver;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -70,47 +141,64 @@
       color: #4caf50;
       text-decoration: underline;
     }
+    .background-logo {
+      position: fixed;
+      top: 150px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.15;
+      z-index: 1;
+      width: 90%;
+      max-width: 1200px;
+      pointer-events: none;
+      user-select: none;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>
+      Silver Arrow
+      <span class="slogan">Ihr Kompass für erfolgreiche Trading-Strategien</span>
+    </h1>
+    <img src="Logo Silver Arrow.png" alt="Silver Arrow Logo" />
+  </header>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="Krypto.html">Kryptostrategien</a></li>
+      <li><a href="Indices.html">Indices Strategien</a></li>
+      <li><a href="Kontakt.html">Kontakt</a></li>
+      <li><a href="Impressum.html">Impressum</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <h2>Wählen Sie Ihren Signal-Kanal</h2>
-    <form action="https://formsubmit.co/xxs.i.l.v.e.r.a.r.r.o.w.1.9.9.9xx@gmail.com" method="POST" onsubmit="redirectAfterSubmit()">
-      <!-- FormSubmit Einstellungen -->
+    <h2>Signale abonnieren</h2>
+    <form id="signalForm" action="https://formsubmit.co/xxs.i.l.v.e.r.a.r.r.o.w.1.9.9.9xx@gmail.com" method="POST" target="hidden_iframe" onsubmit="redirectAfterSubmit()">
+      <!-- FormSubmit Settings -->
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://buy.stripe.com/5kQ14f1391n42zieM05J600" />
       <input type="hidden" name="_subject" value="Neuer Signal-Abonnent" />
       <input type="hidden" name="_template" value="box" />
 
-      <!-- Pflichtfelder -->
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Ihr Name" required />
+      <input type="text" id="name" name="Name" placeholder="Ihr Name" required />
 
-      <label for="email">E-Mail (immer erforderlich)</label>
-      <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="Email" placeholder="Ihre E-Mail-Adresse" required />
 
-      <!-- Kanal-Auswahl -->
-      <label for="channel">Bevorzugter Kanal für Signale</label>
-      <select id="channel" name="channel" required onchange="toggleFields()">
+      <label for="channel">Bevorzugter Kanal</label>
+      <select id="channel" name="Kanal" required onchange="updateContactField()">
         <option value="">Bitte wählen...</option>
-        <option value="email">E-Mail</option>
-        <option value="whatsapp">WhatsApp</option>
-        <option value="telegram">Telegram</option>
-        <option value="instagram">Instagram</option>
+        <option value="Email">E-Mail</option>
+        <option value="WhatsApp">WhatsApp</option>
+        <option value="Telegram">Telegram</option>
+        <option value="Instagram">Instagram</option>
       </select>
 
-      <!-- Dynamische Zusatzfelder -->
-      <div id="phoneField" class="hidden">
-        <label for="phone">Telefonnummer (für WhatsApp/Telegram)</label>
-        <input type="text" id="phone" name="phone" placeholder="+49 ..." />
-      </div>
+      <div id="extraField"></div>
 
-      <div id="instaField" class="hidden">
-        <label for="instagram">Instagram-Name</label>
-        <input type="text" id="instagram" name="instagram" placeholder="@IhrName" />
-      </div>
-
-      <!-- Datenschutz -->
       <label class="checkbox-label">
         <input type="checkbox" required />
         Ich akzeptiere die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.
@@ -118,36 +206,24 @@
 
       <button type="submit">Weiter zur Zahlung</button>
     </form>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
   </main>
 
+  <img src="Logo Silver Arrow.png" alt="Hintergrundlogo" class="background-logo" />
+
   <script>
-    function toggleFields() {
+    function updateContactField() {
       const channel = document.getElementById("channel").value;
-      const phoneField = document.getElementById("phoneField");
-      const instaField = document.getElementById("instaField");
+      const extraField = document.getElementById("extraField");
+      extraField.innerHTML = "";
 
-      // Felder zurücksetzen
-      phoneField.classList.add("hidden");
-      instaField.classList.add("hidden");
-      document.getElementById("phone").required = false;
-      document.getElementById("instagram").required = false;
-
-      // Abhängig vom Kanal Felder anzeigen
-      if (channel === "whatsapp" || channel === "telegram") {
-        phoneField.classList.remove("hidden");
-        document.getElementById("phone").required = true;
-      } else if (channel === "instagram") {
-        instaField.classList.remove("hidden");
-        document.getElementById("instagram").required = true;
-      }
-    }
-
-    // Sicherheit: Automatisch nach Stripe weiterleiten
-    function redirectAfterSubmit() {
-      setTimeout(() => {
-        window.location.href = "https://buy.stripe.com/5kQ14f1391n42zieM05J600";
-      }, 1000); 
-    }
-  </script>
-</body>
-</html>
+      if (channel === "WhatsApp" || channel === "Telegram") {
+        extraField.innerHTML = `
+          <label for="phone">Telefonnummer</label>
+          <input type="text" id="phone" name="Telefonnummer" placeholder="Ihre Telefonnummer" required />
+        `;
+      } else if (channel === "Instagram") {
+        extraField.innerHTML = `
+          <label for="insta">Instagram-Nutzername</label>
+          <input type="text" id="insta" name="Instagram" placeholder="@IhrName"
