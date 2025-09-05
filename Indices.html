@@ -434,14 +434,34 @@ Ob als Ergänzung zu klassischen ETF-Sparplänen oder als eigenständige Strateg
 </table>
 <div class="signal-section">
 
-<div class="signal-card">
-<h3>S&amp;P 500 Trading-Signale</h3>
-<p>Profitieren Sie von unseren S&amp;P 500 Signalen und verbessern Sie Ihre Trading-Performance.</p>
-  <div class="subscribe-container">
-  <label><input type="checkbox" id="chkDatenschutz"> Datenschutzerklärung</label>
-  <label><input type="checkbox" id="chkAGB"> AGB akzeptieren</label>
-<a href="https://buy.stripe.com/5kQ14f1391n42zieM05J600" class="subscribe-btn" role="button" aria-label="S&P 500 Signale abonnieren" class="subscribe-btn" role="button" aria-label="S&P 500 Signale abonnieren">Signale abonnieren</a>
+<div class="signal-section">
+
+  <div class="signal-card">
+    <h3>S&amp;P 500 Trading-Signale</h3>
+    <p>Profitieren Sie von unseren S&amp;P 500 Signalen und verbessern Sie Ihre Trading-Performance.</p>
+    
+    <div class="subscribe-container">
+      <label><input type="checkbox" id="chkDatenschutzSP"> Datenschutzerklärung</label><br>
+      <label><input type="checkbox" id="chkAGBSP"> AGB akzeptieren</label><br>
+      <button type="button" id="btnSubscribeSP" class="subscribe-btn">Signale abonnieren</button>
+    </div>
+  </div>
+
 </div>
+
+<script>
+document.getElementById('btnSubscribeSP').addEventListener('click', function() {
+  const datenschutz = document.getElementById('chkDatenschutzSP').checked;
+  const agb = document.getElementById('chkAGBSP').checked;
+
+  if(datenschutz && agb) {
+    window.location.href = 'https://buy.stripe.com/5kQ14f1391n42zieM05J600';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
+
 
 <div class="chart-container">
   <canvas id="nasdaqChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
@@ -686,6 +706,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
