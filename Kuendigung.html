@@ -101,6 +101,24 @@
       resize: vertical;
       transition: border-color 0.3s ease;
     }
+        input[type="text"],
+    input[type="email"],
+    textarea {
+      background-color: #222;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: silver;
+      padding: 10px;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
     input[type="text"]:focus, textarea:focus { border-color: #4caf50; outline: none; }
     textarea { min-height: 120px; }
     button[type="submit"] {
