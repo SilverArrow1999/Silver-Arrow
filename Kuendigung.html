@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Silver Arrow - Kontakt</title>
+  <title>Silver Arrow - Kündigung</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,9 +25,7 @@
       width: 100vw;
       box-sizing: border-box;
     }
-    header img {
-      height: 80px;
-    }
+    header img { height: 80px; }
     header h1 {
       margin: 0;
       font-size: 2rem;
@@ -69,10 +67,7 @@
       color: white;
       outline: none;
     }
-    .nav-list a.active {
-      background-color: #45a049;
-      color: white;
-    }
+    .nav-list a.active { background-color: #45a049; color: white; }
     main {
       padding: 20px;
       z-index: 2;
@@ -95,13 +90,8 @@
       flex-direction: column;
       gap: 15px;
     }
-    label {
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    input[type="text"],
-    input[type="email"],
-    textarea {
+    label { font-weight: 600; margin-bottom: 6px; }
+    input[type="text"], textarea {
       background-color: #222;
       border: 1px solid #444;
       border-radius: 6px;
@@ -111,15 +101,8 @@
       resize: vertical;
       transition: border-color 0.3s ease;
     }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-      border-color: #4caf50;
-      outline: none;
-    }
-    textarea {
-      min-height: 120px;
-    }
+    input[type="text"]:focus, textarea:focus { border-color: #4caf50; outline: none; }
+    textarea { min-height: 120px; }
     button[type="submit"] {
       background-color: #4caf50;
       color: white;
@@ -131,9 +114,7 @@
       transition: background-color 0.3s ease;
       margin-top: 10px;
     }
-    button[type="submit"]:hover {
-      background-color: #45a049;
-    }
+    button[type="submit"]:hover { background-color: #45a049; }
     .disclaimer {
       margin-top: 30px;
       font-size: 0.9rem;
@@ -165,105 +146,24 @@
       align-items: center;
       gap: 8px;
     }
-    .checkbox-label a {
-      color: #4caf50;
-      text-decoration: underline;
-    }
+    .checkbox-label a { color: #4caf50; text-decoration: underline; }
+    fieldset { border: 1px solid #444; border-radius: 6px; padding: 15px; }
+    legend { font-weight: 600; color: silver; }
     @media (max-width: 600px) {
-  header {
-    padding: 15px 20px;
-    flex-direction: column;
-    /* Je nachdem: center oder flex-start */
-    align-items: center; /* oder flex-start */
-    gap: 10px;
-    width: 100%;
-  }
-  header h1 {
-    font-size: 1.5rem;
-  }
-  header h1 span.slogan {
-    font-size: 1rem;
-    margin-top: 3px;
-  }
-  header img {
-    height: 60px;
-    /* align-self oder margin-top */
-    align-self: flex-end;
-    margin-top: 10px; /* je nachdem was besser aussieht */
-  }
-
-  nav {
-    padding: 10px;
-  }
-  nav .nav-list {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-
-  main {
-    padding: 15px 10px;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /* Für Startseite */
-  .intro {
-    max-width: 100%;
-    font-size: 1rem;
-    padding: 15px;
-  }
-  .feature-section {
-    flex-direction: column;
-    max-width: 100%;
-    gap: 20px;
-  }
-  .feature-card {
-    width: 100%;
-    padding: 20px;
-  }
-  .disclaimer {
-    max-width: 100%;
-    padding: 0 10px;
-    font-size: 0.85rem;
-  }
-
-  /* Für Strategie-Seite */
-  .strategy-overview {
-    padding: 15px;
-    margin: 10px;
-  }
-  table.performance-table {
-    font-size: 0.8rem;
-  }
-  .signal-section {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-  .signal-card {
-    width: 90%;
-    max-width: none;
-  }
-  canvas {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  .background-logo {
-    top: 100px;
-    width: 100%;
-    max-width: none;
-  }
-}
-
+      header { padding: 15px 20px; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+      header h1 { font-size: 1.5rem; }
+      header h1 span.slogan { font-size: 1rem; margin-top: 3px; }
+      header img { height: 60px; align-self: flex-end; margin-top: 10px; }
+      nav { padding: 10px; }
+      nav .nav-list { flex-direction: column; gap: 15px; align-items: center; }
+      main { padding: 15px 10px; max-width: 100%; margin-left: 0; margin-right: 0; }
+      .disclaimer { max-width: 100%; padding: 0 10px; font-size: 0.85rem; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>
-      Silver Arrow
+    <h1>Silver Arrow
       <span class="slogan">Ihr Kompass für erfolgreiche Trading-Strategien</span>
     </h1>
     <img src="Logo Silver Arrow.png" alt="Silver Arrow Logo" />
@@ -274,37 +174,45 @@
       <li><a href="index.html">Startseite</a></li>
       <li><a href="Krypto.html">Kryptostrategien</a></li>
       <li><a href="Indices.html">Indices Strategien</a></li>
-      <li><a href="Kontakt.html" class="active">Kontakt</a></li>
+      <li><a href="kuendigung.html" class="active">Kündigung</a></li>
       <li><a href="Impressum.html">Impressum</a></li>
     </ul>
   </nav>
 
   <main>
-    <h2>Kontaktieren Sie uns</h2>
-    <form action="https://formsubmit.co/xxs.i.l.v.e.r.a.r.r.o.w.1.9.9.9xx@gmail.com" method="POST" aria-label="Kontaktformular">
+    <h2>Kündigung Ihres Abonnements</h2>
+    <form action="https://formsubmit.co/kuendigung.silverarrow@gmail.com" method="POST" aria-label="Kündigungsformular">
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_subject" value="Neue Nachricht über das Kontaktformular auf Silver Arrow" />
+      <input type="hidden" name="_subject" value="Neue Kündigung über Silver Arrow" />
       <input type="hidden" name="_template" value="box" />
 
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Ihr Name" required />
 
-      <label for="email">E-Mail</label>
-      <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
+      <label for="contract">Vertragsnummer</label>
+      <input type="text" id="contract" name="contract" placeholder="Ihre Vertragsnummer" required />
 
-      <label for="message">Nachricht</label>
-      <textarea id="message" name="message" placeholder="Ihre Nachricht" required></textarea>
+      <fieldset>
+        <legend>Abonnements, die gekündigt werden sollen:</legend>
+        <label class="checkbox-label"><input type="checkbox" name="abos[]" value="Nasdaq" /> Nasdaq</label>
+        <label class="checkbox-label"><input type="checkbox" name="abos[]" value="S&P500" /> S&P500</label>
+        <label class="checkbox-label"><input type="checkbox" name="abos[]" value="BTC" /> BTC</label>
+        <label class="checkbox-label"><input type="checkbox" name="abos[]" value="ETH" /> ETH</label>
+        <label class="checkbox-label"><input type="checkbox" name="abos[]" value="XRP" /> XRP</label>
+        <label class="checkbox-label"><input type="checkbox" name="abos[]" value="SOL" /> SOL</label>
+        <label class="checkbox-label"><input type="checkbox" name="abos[]" value="DOGE" /> DOGE</label>
+      </fieldset>
 
       <label class="checkbox-label">
         <input type="checkbox" required />
         Ich akzeptiere die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.
       </label>
 
-      <button type="submit">Absenden</button>
+      <button type="submit">Kündigung absenden</button>
     </form>
 
     <div class="disclaimer">
-      <p><strong>Hinweis:</strong> Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.</p>
+      <p><strong>Hinweis:</strong> Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Kündigung verwendet und nicht an Dritte weitergegeben.</p>
     </div>
   </main>
 
