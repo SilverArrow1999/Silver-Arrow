@@ -217,5 +217,17 @@
   </main>
 
   <img src="Logo Silver Arrow.png" alt="Hintergrundlogo" class="background-logo" />
+  <script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function(e) {
+    const checkboxes = form.querySelectorAll('input[name="abos[]"]');
+    const checked = Array.from(checkboxes).some(cb => cb.checked);
+    if (!checked) {
+      e.preventDefault();
+      alert("Bitte wählen Sie mindestens ein Abonnement aus, das gekündigt werden soll.");
+    }
+  });
+</script>
+
 </body>
 </html>
