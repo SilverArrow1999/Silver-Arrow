@@ -132,4 +132,45 @@
       width: 90%;
       max-width: 1200px;
       pointer-events: none;
-      user-select: non
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 15px 20px; flex-direction: column; align-items: flex-start; gap: 10px; width: 100%; }
+      header h1 { font-size: 1.5rem; }
+      header h1 span.slogan { font-size: 1rem; margin-top: 3px; }
+      header img { height: 60px; align-self: flex-end; }
+      nav { padding: 10px; }
+      .nav-list { flex-direction: column; gap: 15px; align-items: center; }
+      main { padding: 15px 10px; max-width: 100%; margin: 0; }
+      .intro { max-width: 100%; font-size: 1rem; padding: 15px; }
+      .disclaimer { max-width: 100%; padding: 0 10px; font-size: 0.85rem; }
+      .background-logo { top: 100px; width: 100%; max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      Silver Arrow
+      <span class="slogan">Ihr Kompass für erfolgreiche Trading-Strategien</span>
+    </h1>
+    <img src="Logo Silver Arrow.png" alt="Silver Arrow Logo" />
+  </header>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="Krypto.html">Kryptostrategien</a></li>
+      <li><a href="Indices.html">Indices Strategien</a></li>
+      <li><a href="Kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="intro">
+      <h2>Datenschutzerklärung</h2>
+      <p><strong>1. Leistungsumfang:</strong><br>
+      Kunden können über die Website ein Abonnement für Handelssignale (Indizes und Kryptowährungen) erwerben. Nach Zahlung über Stripe erhalten sie eine Willkommens-E-Mail und wählen, über welchen Kanal sie die Signale erhalten möchten: WhatsApp, Telegram, Instagram oder E-Mail. Die Handelssignale dienen nur Informationszwecken und ersetzen keine Anlageberatung. Der Kunde handelt auf eigene Verantwortung; eine Erfolgsgarantie wird nicht übernommen.</p>
+
+      
