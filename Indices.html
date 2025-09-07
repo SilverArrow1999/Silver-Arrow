@@ -515,26 +515,21 @@ document.getElementById('btnSubscribeSP').addEventListener('click', function() {
 </tbody>
 </table>
 
-<div class="signal-section">
+<div class="signal-card">
+  <h3>NASDAQ 100 Trading-Signale</h3>
+  <p>Profitieren Sie von unseren NASDAQ 100 Signalen und verbessern Sie Ihre Trading-Performance.</p>
 
-  <div class="signal-card">
-    <h3>NASDAQ 100 Trading-Signale</h3>
-    <p>Profitieren Sie von unseren NASDAQ 100 Signalen und verbessern Sie Ihre Trading-Performance.</p>
-
-
-    <div class="subscribe-container">
-      <label><input type="checkbox" id="chkDatenschutzSP"> Datenschutzerklärung</label><br>
-      <label><input type="checkbox" id="chkAGBSP"> AGB akzeptieren</label><br>
-      <button type="button" id="btnSubscribeNSDQ" class="subscribe-btn">Signale abonnieren</button>
-    </div>
+  <div class="subscribe-container">
+    <label><input type="checkbox" id="chkDatenschutzNSDQ"> Datenschutzerklärung</label><br>
+    <label><input type="checkbox" id="chkAGBNSDQ"> AGB akzeptieren</label><br>
+    <button type="button" id="btnSubscribeNSDQ" class="subscribe-btn">Signale abonnieren</button>
   </div>
-
 </div>
 
 <script>
 document.getElementById('btnSubscribeNSDQ').addEventListener('click', function() {
-  const datenschutz2 = document.getElementById('chkDatenschutzSP').checked;
-  const agb2 = document.getElementById('chkAGBSP').checked;
+  const datenschutz2 = document.getElementById('chkDatenschutzNSDQ').checked;
+  const agb2 = document.getElementById('chkAGBNSDQ').checked;
 
   if(datenschutz2 && agb2) {
     window.location.href = 'https://buy.stripe.com/fZu9AL7rx0j01vefQ45J601';
@@ -543,6 +538,7 @@ document.getElementById('btnSubscribeNSDQ').addEventListener('click', function()
   }
 });
 </script>
+
 
 
 <div class="disclaimer">
@@ -723,6 +719,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
