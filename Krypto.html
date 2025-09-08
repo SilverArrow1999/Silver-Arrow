@@ -3,205 +3,320 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Kryptostrategien - Silver Arrow</title>
+<title>Indices Strategien - Silver Arrow</title>
 <style>
 body {
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: silver;
-  margin: 0;
-  padding: 0;
-  position: relative;
+font-family: Arial, sans-serif;
+background: #000;
+color: silver;
+margin: 0;
+padding: 0;
+position: relative;
 }
 header {
-  background-color: #111;
-  color: silver;
-  padding: 20px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  z-index: 3;
-  width: 100vw;
-  box-sizing: border-box;
+background-color: #111;
+color: silver;
+padding: 20px 40px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: relative;
+z-index: 3;
+width: 100vw;
+box-sizing: border-box;
 }
 header img {
-  height: 80px;
+height: 80px;
 }
 header h1 {
-  margin: 0;
-  font-size: 2rem;
-  display: flex;
-  flex-direction: column;
+margin: 0;
+font-size: 2rem;
+display: flex;
+flex-direction: column;
 }
 header h1 span.slogan {
-  font-weight: normal;
-  font-size: 1.2rem;
-  color: #bbb;
-  margin-top: 5px;
-  font-style: italic;
+font-weight: normal;
+font-size: 1.2rem;
+color: #bbb;
+margin-top: 5px;
+font-style: italic;
 }
 nav {
-  background-color: #222;
-  padding: 10px 20px;
-  z-index: 4;
+background-color: #222;
+padding: 10px 20px;
+z-index: 4;
 }
 .nav-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+gap: 30px;
 }
 .nav-list a {
-  color: silver;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+color: silver;
+text-decoration: none;
+font-weight: 600;
+font-size: 1rem;
+padding: 6px 12px;
+border-radius: 6px;
+transition: background-color 0.3s ease, color 0.3s ease;
 }
 .nav-list a:hover,
 .nav-list a:focus {
-  background-color: #4caf50;
-  color: white;
-  outline: none;
+background-color: #4caf50;
+color: white;
+outline: none;
 }
 .nav-list a.active {
-  background-color: #45a049;
-  color: white;
+background-color: #45a049;
+color: white;
 }
 main {
-  padding: 20px;
-  z-index: 2;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+padding: 20px;
+z-index: 2;
+max-width: 1200px;
+margin-left: auto;
+margin-right: auto;
 }
 main h2 {
-  text-align: center;
-  color: silver;
-  margin-bottom: 30px;
+text-align: center;
+color: silver;
+margin-bottom: 30px;
 }
 .strategy-overview {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(255,255,255,0.1);
-  margin-bottom: 40px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+background: #111;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+margin-bottom: 40px;
+max-width: 900px;
+margin-left: auto;
+margin-right: auto;
 }
 .strategy-overview p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: silver;
-  margin: 0;
+font-size: 1.1rem;
+line-height: 1.6;
+color: silver;
+margin: 0;
 }
 table.performance-table {
-  width: 100%;
-  max-width: 900px;
-  margin: 20px auto 40px auto;
-  border-collapse: collapse;
-  color: silver;
-  font-size: 0.9rem;
+width: 100%;
+max-width: 900px;
+margin: 20px auto 40px auto;
+border-collapse: collapse;
+color: silver;
+font-size: 0.9rem;
 }
 table.performance-table th,
 table.performance-table td {
-  border: 1px solid #444;
-  padding: 8px 12px;
-  text-align: center;
-  white-space: nowrap;
+border: 1px solid #444;
+padding: 8px 12px;
+text-align: center;
+white-space: nowrap;
 }
 table.performance-table th {
-  background-color: #222;
+background-color: #222;
 }
 .positive {
-  color: #4CAF50;
-  font-weight: 600;
+color: #4CAF50; /* Grün */
+font-weight: 600;
 }
+
 .negative {
-  color: #FFC107;
-  font-weight: 600;
+color: #FFC107; /* Gelb */
+font-weight: 600;
 }
 .signal-section {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
+display: flex;
+gap: 30px;
+flex-wrap: wrap;
+justify-content: center;
 }
 .signal-card {
-  background: #111;
-  padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(255,255,255,0.1);
-  width: 300px;
-  text-align: center;
-  color: silver;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+background: #111;
+padding: 25px 30px;
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+width: 300px;
+text-align: center;
+color: silver;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 }
 .signal-card h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1.6rem;
+margin-top: 0;
+margin-bottom: 15px;
+font-size: 1.6rem;
 }
 .signal-card p {
-  flex-grow: 1;
-  font-size: 1rem;
-  margin-bottom: 20px;
-  line-height: 1.4;
+flex-grow: 1;
+font-size: 1rem;
+margin-bottom: 20px;
+line-height: 1.4;
 }
 .subscribe-btn {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
+background-color: #4CAF50;
+color: white;
+border: none;
+padding: 12px 20px;
+font-size: 1rem;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-decoration: none;
+display: inline-block;
 }
 .subscribe-btn:hover {
-  background-color: #45a049;
+background-color: #45a049;
 }
 .disclaimer {
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #999;
-  font-style: italic;
-  text-align: center;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.4;
+margin-top: 40px;
+font-size: 0.9rem;
+color: #999;
+font-style: italic;
+text-align: center;
+max-width: 900px;
+margin-left: auto;
+margin-right: auto;
+line-height: 1.4;
 }
 .background-logo {
-  position: fixed;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0.15;
-  z-index: 1;
-  width: 90%;
-  max-width: 1200px;
-  pointer-events: none;
-  user-select: none;
+position: fixed;
+top: 150px;
+left: 50%;
+transform: translateX(-50%);
+opacity: 0.15;
+z-index: 1;
+width: 90%;
+max-width: 1200px;
+pointer-events: none;
+user-select: none;
 }
+@media (max-width: 600px) {
+  header {
+    padding: 15px 20px;
+    flex-direction: column;
+    /* Je nachdem: center oder flex-start */
+    align-items: center; /* oder flex-start */
+    gap: 10px;
+    width: 100%;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header h1 span.slogan {
+    font-size: 1rem;
+    margin-top: 3px;
+  }
+  header img {
+    height: 60px;
+    /* align-self oder margin-top */
+    align-self: flex-end;
+    margin-top: 10px; /* je nachdem was besser aussieht */
+  }
+
+  nav {
+    padding: 10px;
+  }
+  nav .nav-list {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  main {
+    padding: 15px 10px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Für Startseite */
+  .intro {
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 15px;
+  }
+  .feature-section {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 20px;
+  }
+  .feature-card {
+    width: 100%;
+    padding: 20px;
+  }
+  .disclaimer {
+    max-width: 100%;
+    padding: 0 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Für Strategie-Seite */
+  .strategy-overview {
+    padding: 15px;
+    margin: 10px;
+  }
+  table.performance-table {
+    font-size: 0.8rem;
+  }
+  table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+}
+
+ @media (max-width: 600px) {
+  ...
+  .signal-section {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;            /* Container nimmt volle Breite */
+    box-sizing: border-box; /* Padding/Borders werden mitgerechnet */
+    padding: 0 10px;        /* Innenabstand links/rechts */
+  }
+  .signal-card {
+    width: 100%;            /* Volle Breite des Containers */
+    max-width: 400px;       /* max. Breite, damit es nicht zu breit wird */
+    box-sizing: border-box;
+    margin: 0 auto;         /* zentriert die Karte horizontal */
+    padding: 20px;          /* Innenabstand in der Karte */
+  }
+  ...
+}
+
 .chart-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   width: 100%;
 }
+
 canvas {
-  width: 600px !important;
-  height: 300px !important;
+  width: 600px !important;  /* Fixe Breite für Scrollen */
+  height: 300px !important; /* Höhe wie vorher, damit die Balken gut sichtbar sind */
+}
+
+
+
+  .background-logo {
+    top: 100px;
+    width: 100%;
+    max-width: none;
+  }
+}
+  @media (max-width: 768px) {
+  .chart-container {
+    overflow-x: auto;       /* horizontales Scrollen erlauben */
+    -webkit-overflow-scrolling: touch; /* für flüssiges Scrollen auf iOS */
+    width: 100%;            /* volle Breite des Containers */
+  }
+  .chart-container canvas {
+    min-width: 900px;       /* mindestens so breit wie dein Chart */
+  }
 }
 footer {
   background-color: #111;
@@ -210,208 +325,384 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
+
 footer .footer-links a {
   color: silver;
   text-decoration: none;
   margin: 0 10px;
   font-size: 0.9rem;
 }
+
 footer .footer-links a:hover {
   color: #4CAF50;
 }
+
 footer .footer-copy {
   margin-top: 10px;
   font-size: 0.8rem;
   color: #999;
 }
+
+
+  
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <header>
-  <h1>
-    Silver Arrow
-    <span class="slogan">Märkte im Blick</span>
-  </h1>
-  <img src="Logo Silver Arrow.png" alt="Silver Arrow Logo" />
+<h1>
+Silver Arrow
+<span class="slogan">Märkte im Blick</span>
+</h1>
+<img src="Logo Silver Arrow.png" alt="Silver Arrow Logo" />
 </header>
 
 <nav>
   <ul class="nav-list">
     <li><a href="index.html">Startseite</a></li>
-    <li><a href="Krypto.html" class="active">Kryptostrategien</a></li>
-    <li><a href="Indices.html">Indices Strategien</a></li>
+    <li><a href="Krypto.html">Kryptostrategien</a></li>
+    <li><a href="Indices.html" class="active">Indices Strategien</a></li>
     <li><a href="Kontakt.html">Kontakt</a></li>
   </ul>
 </nav>
 
+
 <main>
-  <h2>Kryptostrategien Überblick</h2>
+<h2>Indices Strategien Überblick</h2>
 
-  <section class="strategy-overview">
-    <p>
-      Unsere Krypto-Signale umfassen derzeit <strong>Bitcoin (BTC)</strong>, <strong>Ethereum (ETH)</strong>, <strong>Ripple (XRP)</strong>, <strong>Solana (SOL)</strong> und <strong>Dogecoin (DOGE)</strong>.<br /><br />
-      Die Signale werden nicht regelmäßig, sondern abhängig von den <strong>aktuellen Marktbedingungen</strong> versendet. Ziel ist es, besondere Marktsituationen hervorzuheben, in denen <strong>Kauf- oder Verkaufsentscheidungen</strong> von Interesse sein können.<br /><br />
-      Die Mitteilungen beschränken sich auf kurze Hinweise, beispielsweise: „Silver Arrow kauft jetzt BTC“. Wie diese Information genutzt wird, liegt vollständig im Ermessen des Abonnenten.<br /><br />
-      Bitte beachten Sie: Es handelt sich <strong>nicht um Anlageberatung oder Empfehlungen</strong>, sondern ausschließlich um <strong>allgemeine Marktinformationen</strong>, die als Inspiration dienen können.
-    </p>
-  </section>
 
-  <!-- BTC Chart -->
-  <div class="chart-container">
-    <canvas id="performanceChart" width="900" height="450"></canvas>
-  </div>
 
-  <!-- BTC Tabelle -->
-  <h2>BTC Strategie vs. Sparplan</h2>
-  <table class="performance-table">
-    <thead>
-      <tr>
-        <th>BTC</th><th>2018</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>BTC (Sparplan)</td><td>-49,41%</td><td>21,62%</td><td>199,75%</td><td>7,22%</td><td>-37,72%</td><td>58,94%</td><td>53,76%</td>
-      </tr>
-      <tr>
-        <td>BTC (Strategie)</td><td>-2,65%</td><td>80,59%</td><td>279,70%</td><td>1,94%</td><td>-42,93%</td><td>57,00%</td><td>66,55%</td>
-      </tr>
-      <tr>
-        <td>Delta</td><td class="positive">46,76%</td><td class="positive">58,97%</td><td class="positive">79,95%</td><td class="negative">-5,28%</td><td class="negative">-5,21%</td><td class="negative">-1,94%</td><td class="positive">12,79%</td>
-      </tr>
-    </tbody>
-  </table>
+<section class="strategy-overview">
+<p>
+Unsere Indices-Strategien konzentrieren sich aktuell auf den <strong>S&amp;P 500</strong> und den <strong>NASDAQ 100</strong>.<br />
+Es handelt sich um <strong>ausschließlich Long-Strategien</strong>, die speziell darauf ausgelegt sind, <strong>Sparpläne mit mittel- bis langfristigem Anlagehorizont</strong> zu optimieren – unter gezieltem <strong>Einsatz von Hebelprodukten</strong>.<br /><br />
 
-  <!-- BTC Signal-Card -->
-  <div class="signal-section">
-    <div class="signal-card">
-      <h3>BTC Trading-Signale</h3>
-      <p>Nutzen Sie unsere BTC Signalen</p>
-      <div class="subscribe-container">
-        <label><input type="checkbox" id="chkDatenschutzSP"> Datenschutzerklärung</label><br>
-        <label><input type="checkbox" id="chkAGBSP"> AGB akzeptieren</label><br>
-        <button type="button" id="btnSubscribeSP" class="subscribe-btn">Signale abonnieren</button>
-      </div>
+Die Grundannahme: Ein Anleger investiert regelmäßig einen fixen Betrag – etwa monatlich – in ein <strong>Derivate-Sparmodell</strong>. Unsere Strategien helfen dabei, auf Basis fundierter Handelssignale gezielt Zeitpunkte zu identifizieren, in denen sich ein Einstieg mit <strong>gehebelten Produkten</strong> besonders lohnt.<br /><br />
+
+Die Umsetzung ist einfach: Die Signale lassen sich in der Regel direkt über <strong>Trade Republic</strong> oder vergleichbare Plattformen replizieren. Ziel ist es, die <strong>durchschnittliche Jahresperformance</strong> über einen längeren Zeitraum hinweg zu steigern – bei <strong>kontrolliertem Risiko</strong> und <strong>voller Transparenz</strong>.<br /><br />
+
+Ob als Ergänzung zu klassischen ETF-Sparplänen oder als eigenständige Strategie: Unsere Modelle bieten einen <strong>modernen, datengetriebenen Ansatz</strong> für <strong>langfristigen Vermögensaufbau mit Renditepotenzial</strong>.
+</p>
+
+</section>
+<div class="chart-container">
+  <canvas id="performanceChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
+</div>
+
+<h2>S&P 500 Strategie vs. Sparplan</h2>
+<table class="performance-table" aria-label="Jahresrenditen S&P 500 Strategien">
+<thead>
+<tr>
+<th>Index</th>
+<th>2020</th>
+<th>2021</th>
+<th>2022</th>
+<th>2023</th>
+<th>2024</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&P500 (Sparplan)</td>
+<td>19,70%</td>
+<td>14,20%</td>
+<td>-6,95%</td>
+<td>12,56%</td>
+<td>10,00%</td>
+<td>1,25%</td>
+</tr>
+<tr>
+<td>S&P500 (Strategie)</td>
+<td>50,78%</td>
+<td>30,09%</td>
+<td>-12,95%</td>
+<td>25,66%</td>
+<td>30,63%</td>
+<td>3,59%</td>
+</tr>
+<tr>
+<td>Delta</td>
+<td class="positive">31,07%</td>
+<td class="positive">15,89%</td>
+<td class="negative">-6,00%</td>
+<td class="positive">13,09%</td>
+<td class="positive">20,63%</td>
+<td class="positive">2,35%</td>
+</tr>
+</tbody>
+</table>
+<div class="signal-section">
+
+<div class="signal-section">
+
+  <div class="signal-card">
+    <h3>S&amp;P 500 Signale</h3>
+    <p>Nutzen Sie unsere S&amp;P 500 Signale.</p>
+    
+    <div class="subscribe-container">
+      <label><input type="checkbox" id="chkDatenschutzSP"> Datenschutzerklärung</label><br>
+      <label><input type="checkbox" id="chkAGBSP"> AGB akzeptieren</label><br>
+      <button type="button" id="btnSubscribeSP" class="subscribe-btn">Signale abonnieren</button>
     </div>
   </div>
 
-  <div class="disclaimer">
-    <p><strong>Disclaimer:</strong> Diese Webseite stellt keine Finanz- oder Anlageberatung dar. Es werden ausschließlich Informationen bereitgestellt, auf deren Basis Kunden eigenständig Handelsentscheidungen treffen können.</p>
-  </div>
-
-  <!-- ETH Chart -->
-  <div class="chart-container">
-    <canvas id="performanceChartETH" width="900" height="450"></canvas>
-  </div>
-
-  <!-- ETH Tabelle -->
-  <h2>ETH Strategie vs. Sparplan</h2>
-  <table class="performance-table">
-    <thead>
-      <tr>
-        <th>ETH</th><th>2018</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>ETH (Sparplan)</td><td>-61,29%</td><td>-21,77%</td><td>214,96%</td><td>83,10%</td><td>-35,19%</td><td>33,20%</td><td>13,76%</td>
-      </tr>
-      <tr>
-        <td>ETH (Strategie)</td><td>-26,63%</td><td>44,55%</td><td>577,49%</td><td>119,20%</td><td>-20,15%</td><td>16,13%</td><td>53,01%</td>
-      </tr>
-      <tr>
-        <td>Delta</td><td class="positive">34,66%</td><td class="positive">66,32%</td><td class="positive">362,53%</td><td class="positive">36,10%</td><td class="positive">15,04%</td><td class="negative">-17,07%</td><td class="positive">39,25%</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- ETH Signal-Card -->
-  <div class="signal-section">
-    <div class="signal-card">
-      <h3>ETH Trading-Signale</h3>
-      <p>Nutzen Sie unsere ETH Signalen</p>
-      <div class="subscribe-container">
-        <label><input type="checkbox" id="chkDatenschutzETH"> Datenschutzerklärung</label><br>
-        <label><input type="checkbox" id="chkAGBETH"> AGB akzeptieren</label><br>
-        <button type="button" id="btnSubscribeETH" class="subscribe-btn">Signale abonnieren</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="disclaimer">
-    <p><strong>Disclaimer:</strong> Diese Webseite stellt keine Finanz- oder Anlageberatung dar. Es werden ausschließlich Informationen bereitgestellt, auf deren Basis Kunden eigenständig Handelsentscheidungen treffen können.</p>
-  </div>
-</main>
-
-<img src="Logo Silver Arrow.png" alt="Hintergrundlogo" class="background-logo" />
+</div>
 
 <script>
-// BTC Chart
-const ctx = document.getElementById('performanceChart').getContext('2d');
-const chart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['2018','2019','2020', '2021', '2022', '2023', '2024'],
-    datasets: [
-      { label: 'BTC (Sparplan)', data: [-49.41, 21.62, 199.75, 7.22, -37.72, 58.94, 53.76], backgroundColor: 'rgba(192,192,192,0.8)', borderColor: 'rgba(192,192,192,1)', borderWidth: 1 },
-      { label: 'BTC (Strategie)', data: [-2.65, 80.59, 279.70, 1.94, -42.93, 57.00, 66.55], backgroundColor: 'rgba(30, 144, 255, 0.7)', borderColor: 'rgba(30, 144, 255, 1)', borderWidth: 1 },
-      { label: 'Delta', data: [46.76, 58.97, 79.95, -5.28, -5.21, -1.94, 12.79],
-        backgroundColor: context => context.raw>=0?'rgba(76, 175, 80, 0.7)':'rgba(255,193,7,0.7)',
-        borderColor: context => context.raw>=0?'rgba(76,175,80,1)':'rgba(255,193,7,1)',
-        borderWidth: 1
-      }
-    ]
-  },
-  options: {
-    responsive: true,
-    plugins: { legend: { labels: { color: 'silver' } }, title: { display: true, text: 'Jahresrenditen: BTC (Sparplan) vs. BTC (Strategie)', color: 'silver', font:{size:18} } },
-    scales: { x:{ticks:{color:'silver'}}, y:{ticks:{color:'silver', callback:value=>value+'%'}, title:{display:true,text:'Rendite in %',color:'silver'}, grid:{color:'#333'}} }
-  }
-});
-
-// ETH Chart
-const ctxETH = document.getElementById('performanceChartETH').getContext('2d');
-const chartETH = new Chart(ctxETH, {
-  type: 'bar',
-  data: {
-    labels: ['2018','2019','2020', '2021', '2022', '2023', '2024'],
-    datasets: [
-      { label: 'ETH (Sparplan)', data: [-61.29, -21.77, 214.96, 83.10, -35.19, 33.20, 13.76], backgroundColor: 'rgba(192,192,192,0.8)', borderColor: 'rgba(192,192,192,1)', borderWidth: 1 },
-      { label: 'ETH (Strategie)', data: [-26.63, 44.55, 577.49, 119.20, -20.15, 16.13, 53.01], backgroundColor: 'rgba(30, 144, 255, 0.7)', borderColor: 'rgba(30, 144, 255, 1)', borderWidth: 1 },
-      { label: 'Delta', data: [34.66, 66.32, 362.53, 36.10, 15.04, -17.07, 39.25],
-        backgroundColor: context => context.raw>=0?'rgba(76, 175, 80, 0.7)':'rgba(255,193,7,0.7)',
-        borderColor: context => context.raw>=0?'rgba(76,175,80,1)':'rgba(255,193,7,1)',
-        borderWidth: 1
-      }
-    ]
-  },
-  options: {
-    responsive: true,
-    plugins: { legend: { labels: { color: 'silver' } }, title: { display: true, text: 'Jahresrenditen: ETH (Sparplan) vs. ETH (Strategie)', color: 'silver', font:{size:18} } },
-    scales: { x:{ticks:{color:'silver'}}, y:{ticks:{color:'silver', callback:value=>value+'%'}, title:{display:true,text:'Rendite in %',color:'silver'}, grid:{color:'#333'}} }
-  }
-});
-
-// BTC Subscribe
 document.getElementById('btnSubscribeSP').addEventListener('click', function() {
-  if(document.getElementById('chkDatenschutzSP').checked && document.getElementById('chkAGBSP').checked){
-    window.location.href = '';
-  } else {
-    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
-  }
-});
+  const datenschutz1 = document.getElementById('chkDatenschutzSP').checked;
+  const agb1 = document.getElementById('chkAGBSP').checked;
 
-// ETH Subscribe
-document.getElementById('btnSubscribeETH').addEventListener('click', function() {
-  if(document.getElementById('chkDatenschutzETH').checked && document.getElementById('chkAGBETH').checked){
-    window.location.href = '';
+  if(datenschutz1 && agb1) {
+    window.location.href = 'https://buy.stripe.com/5kQ14f1391n42zieM05J600';
   } else {
     alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
   }
 });
 </script>
 
+
+<div class="chart-container">
+  <canvas id="nasdaqChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
+</div>
+
+
+
+
+
+<h2>NASDAQ 100 Strategie vs. Sparplan</h2>
+<table class="performance-table" aria-label="Jahresrenditen NASDAQ 100 Strategien">
+<thead>
+<tr>
+<th>Index</th>
+<th>2020</th>
+<th>2021</th>
+<th>2022</th>
+<th>2023</th>
+<th>2024</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NASDAQ100 (Sparplan)</td>
+<td>30,56%</td>
+<td>15,72%</td>
+<td>-15,14%</td>
+<td>22,51%</td>
+<td>12,42%</td>
+<td>10,18%</td>
+</tr>
+<tr>
+<td>NASDAQ100 (Strategie)</td>
+<td>89,11%</td>
+<td>30,40%</td>
+<td>-28,61%</td>
+<td>46,59%</td>
+<td>29,24%</td>
+<td>20,88%</td>
+</tr>
+<tr>
+<td>Delta</td>
+<td class="positive">58,55%</td>
+<td class="positive">14,68%</td>
+<td class="negative">-13,47%</td>
+<td class="positive">24,09%</td>
+<td class="positive">16,82%</td>
+<td class="positive">10,70%</td>
+</tr>
+</tbody>
+</table>
+
+<div class="signal-card">
+  <h3>NASDAQ 100 Signale</h3>
+  <p>Nutzen Sie unsere NASDAQ 100 Signale.</p>
+
+  <div class="subscribe-container">
+    <label><input type="checkbox" id="chkDatenschutzNSDQ"> Datenschutzerklärung</label><br>
+    <label><input type="checkbox" id="chkAGBNSDQ"> AGB akzeptieren</label><br>
+    <button type="button" id="btnSubscribeNSDQ" class="subscribe-btn">Signale abonnieren</button>
+  </div>
+</div>
+
+<script>
+document.getElementById('btnSubscribeNSDQ').addEventListener('click', function() {
+  const datenschutz2 = document.getElementById('chkDatenschutzNSDQ').checked;
+  const agb2 = document.getElementById('chkAGBNSDQ').checked;
+
+  if(datenschutz2 && agb2) {
+    window.location.href = 'https://buy.stripe.com/fZu9AL7rx0j01vefQ45J601';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
+
+
+
+<div class="disclaimer">
+<p><strong>Disclaimer:</strong> Diese Webseite stellt keine Finanz- oder Anlageberatung dar. Es werden ausschließlich Informationen bereitgestellt, auf deren Basis Kunden eigenständig Handelsentscheidungen treffen können.</p>
+</div>
+</main>
+
+<img src="Logo Silver Arrow.png" alt="Hintergrundlogo" class="background-logo" />
+<script>
+const ctx = document.getElementById('performanceChart').getContext('2d');
+const chart = new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ['2020', '2021', '2022', '2023', '2024'],
+datasets: [
+{
+label: 'S&P500 (Sparplan)',
+data: [19.7, 14.2, -6.95, 12.56, 10.0, 1.25],
+backgroundColor: 'rgba(192,192,192,0.8)',
+borderColor: 'rgba(192,192,192,1)',
+borderWidth: 1
+},
+{
+label: 'S&P500 (Strategie)',
+data: [50.78, 30.09, -12.95, 25.66, 30.63, 3.59],
+backgroundColor: 'rgba(30, 144, 255, 0.7)', // Blau
+borderColor: 'rgba(30, 144, 255, 1)',
+borderWidth: 1
+},
+{
+label: 'Delta',
+data: [31.07, 15.89, -6.00, 13.09, 20.63, 2.35],
+backgroundColor: function(context) {
+const value = context.raw;
+return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)'; // grün oder gelb
+},
+borderColor: function(context) {
+const value = context.raw;
+return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
+},
+borderWidth: 1
+}
+]
+},
+options: {
+responsive: true,
+plugins: {
+legend: {
+labels: {
+color: 'silver'
+}
+},
+title: {
+display: true,
+text: 'Jahresrenditen: S&P500 (Sparplan) vs. S&P500 (Strategie)',
+color: 'silver',
+font: {
+size: 18
+}
+}
+},
+scales: {
+x: {
+ticks: {
+color: 'silver'
+}
+},
+y: {
+ticks: {
+color: 'silver',
+callback: function(value) {
+return value + '%';
+}
+},
+title: {
+display: true,
+text: 'Rendite in %',
+color: 'silver'
+},
+grid: {
+color: '#333'
+}
+}
+}
+}
+});
+</script>
+<script>
+const ctxNasdaq = document.getElementById('nasdaqChart').getContext('2d');
+const nasdaqChart = new Chart(ctxNasdaq, {
+type: 'bar',
+data: {
+labels: ['2020', '2021', '2022', '2023', '2024'],
+datasets: [
+{
+label: 'NASDAQ100 (Sparplan)',
+data: [30.56, 15.72, -15.14, 22.51, 12.42, 10.18],
+backgroundColor: 'rgba(192,192,192,0.8)', // Silber
+borderColor: 'rgba(192,192,192,1)',
+borderWidth: 1
+},
+{
+label: 'NASDAQ100 (Strategie)',
+data: [89.11, 30.40, -28.61, 46.59, 29.24, 20.88],
+backgroundColor: 'rgba(30, 144, 255, 0.7)', // Blau
+borderColor: 'rgba(30, 144, 255, 1)',
+borderWidth: 1
+},
+{
+label: 'Delta',
+data: [58.55, 14.68, -13.47, 24.09, 16.82, 10.70],
+backgroundColor: function(context) {
+const value = context.raw;
+return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)'; // Grün oder Gelb
+},
+borderColor: function(context) {
+const value = context.raw;
+return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
+},
+borderWidth: 1
+}
+]
+},
+options: {
+responsive: true,
+plugins: {
+legend: {
+labels: {
+color: 'silver'
+}
+},
+title: {
+display: true,
+text: 'Jahresrenditen: NASDAQ100 (Sparplan) vs. NASDAQ100 (Strategie)',
+color: 'silver',
+font: {
+size: 18
+}
+}
+},
+scales: {
+x: {
+ticks: {
+color: 'silver'
+}
+},
+y: {
+ticks: {
+color: 'silver',
+callback: function(value) {
+return value + '%';
+}
+},
+title: {
+display: true,
+text: 'Rendite in %',
+color: 'silver'
+},
+grid: {
+color: '#333'
+}
+}
+}
+}
+});
+</script>
 <footer>
   <div class="footer-links">
     <a href="Impressum.html">Impressum</a> |
@@ -423,5 +714,18 @@ document.getElementById('btnSubscribeETH').addEventListener('click', function() 
   <p class="footer-copy">&copy; 2025 Silver Arrow – Alle Rechte vorbehalten.</p>
 </footer>
 
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
