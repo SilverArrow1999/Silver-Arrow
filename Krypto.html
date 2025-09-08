@@ -648,7 +648,7 @@ document.getElementById('btnSubscribeSP').addEventListener('click', function() {
 <img src="Logo Silver Arrow.png" alt="Hintergrundlogo" class="background-logo" />
 <script>
 const ctxETH = document.getElementById('performanceChartETH').getContext('2d');
-const chartETH = new Chart(ctx, {
+const chartETH = new Chart(ctxETH, {
 type: 'bar',
 data: {
 labels: ['2018','2019','2020', '2021', '2022', '2023', '2024'],
@@ -740,6 +740,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
