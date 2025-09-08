@@ -555,6 +555,172 @@ color: '#333'
 }
 });
 </script>
+<h2>ETH Strategie vs. Sparplan</h2>
+<table class="performance-table" aria-label="Jahresrenditen ETH Strategien">
+<thead>
+<tr>
+<th>BTC</th>
+<th>2018</th>
+<th>2019</th>
+<th>2020</th>
+<th>2021</th>
+<th>2022</th>
+<th>2023</th>
+<th>2024</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BTC (Sparplan)</td>
+<td>-61,29%</td>
+<td>-21,77%</td>
+<td>214,96%</td>
+<td>83,10%</td>
+<td>-35,19%</td>
+<td>33,20%</td>
+<td>13,76%</td>
+</tr>
+<tr>
+<td>ETH (Strategie)</td>
+<td>-26,63%</td>
+<td>44,55%</td>
+<td>577,49%</td>
+<td>119,20%</td>
+<td>-20,15%</td>
+<td>16,13%</td>
+<td>53,01%</td>
+</tr>
+<tr>
+<td>Delta</td>
+<td class="positive">34,66%</td>
+<td class="positive">66,32%</td>
+<td class="positive">362,53%</td>
+<td class="positive">36,10%</td>
+<td class="positive">15,04</td>
+<td class="negative">-17,07%</td>
+<td class="positive">39,25%</td>
+</tr>
+</tbody>
+</table>
+<div class="signal-section">
+
+<div class="signal-section">
+
+  <div class="signal-card">
+    <h3>ETH Trading-Signale</h3>
+    <p>Nutzen Sie unsere ETH Signalen</p>
+    
+    <div class="subscribe-container">
+      <label><input type="checkbox" id="chkDatenschutzSP"> Datenschutzerklärung</label><br>
+      <label><input type="checkbox" id="chkAGBSP"> AGB akzeptieren</label><br>
+      <button type="button" id="btnSubscribeSP" class="subscribe-btn">Signale abonnieren</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+document.getElementById('btnSubscribeSP').addEventListener('click', function() {
+  const datenschutz2 = document.getElementById('chkDatenschutzSP').checked;
+  const agb2 = document.getElementById('chkAGBSP').checked;
+
+  if(datenschutz2 && agb2) {
+    window.location.href = '';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
+
+
+
+
+
+<div class="disclaimer">
+<p><strong>Disclaimer:</strong> Diese Webseite stellt keine Finanz- oder Anlageberatung dar. Es werden ausschließlich Informationen bereitgestellt, auf deren Basis Kunden eigenständig Handelsentscheidungen treffen können.</p>
+</div>
+</main>
+
+<img src="Logo Silver Arrow.png" alt="Hintergrundlogo" class="background-logo" />
+<script>
+const ctx = document.getElementById('performanceChart').getContext('2d');
+const chart = new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ['2018','2019','2020', '2021', '2022', '2023', '2024'],
+datasets: [
+{
+label: 'ETH (Sparplan)',
+data: [-61.29, -21.77, 214.96, 83.10, -35.19, 33.20, 13.76],
+backgroundColor: 'rgba(192,192,192,0.8)',
+borderColor: 'rgba(192,192,192,1)',
+borderWidth: 1
+},
+{
+label: 'ETH (Strategie)',
+data: [-26.63, 44.55, 577.49, 119.20, -20.15, 16.13, 53.01],
+backgroundColor: 'rgba(30, 144, 255, 0.7)', // Blau
+borderColor: 'rgba(30, 144, 255, 1)',
+borderWidth: 1
+},
+{
+label: 'Delta',
+data: [34.66, 66.32, 362.53, 36.10, 15.04, -17.07, 39.25],
+backgroundColor: function(context) {
+const value = context.raw;
+return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)'; // grün oder gelb
+},
+borderColor: function(context) {
+const value = context.raw;
+return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
+},
+borderWidth: 1
+}
+]
+},
+options: {
+responsive: true,
+plugins: {
+legend: {
+labels: {
+color: 'silver'
+}
+},
+title: {
+display: true,
+text: 'Jahresrenditen: ETH (Sparplan) vs. ETH (Strategie)',
+color: 'silver',
+font: {
+size: 18
+}
+}
+},
+scales: {
+x: {
+ticks: {
+color: 'silver'
+}
+},
+y: {
+ticks: {
+color: 'silver',
+callback: function(value) {
+return value + '%';
+}
+},
+title: {
+display: true,
+text: 'Rendite in %',
+color: 'silver'
+},
+grid: {
+color: '#333'
+}
+}
+}
+}
+});
+</script>  
 
 <footer>
   <div class="footer-links">
@@ -570,6 +736,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
