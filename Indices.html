@@ -399,7 +399,6 @@ Ob als Ergänzung zu klassischen ETF-Sparplänen oder als eigenständige Strateg
 <th>2022</th>
 <th>2023</th>
 <th>2024</th>
-<th>2025 (Juni)</th>
 </tr>
 </thead>
 <tbody>
@@ -481,7 +480,6 @@ document.getElementById('btnSubscribeSP').addEventListener('click', function() {
 <th>2022</th>
 <th>2023</th>
 <th>2024</th>
-<th>2025 (Juni)</th>
 </tr>
 </thead>
 <tbody>
@@ -552,7 +550,7 @@ const ctx = document.getElementById('performanceChart').getContext('2d');
 const chart = new Chart(ctx, {
 type: 'bar',
 data: {
-labels: ['2020', '2021', '2022', '2023', '2024', '2025 (Juni)'],
+labels: ['2020', '2021', '2022', '2023', '2024'],
 datasets: [
 {
 label: 'S&P500 (Sparplan)',
@@ -631,7 +629,7 @@ const ctxNasdaq = document.getElementById('nasdaqChart').getContext('2d');
 const nasdaqChart = new Chart(ctxNasdaq, {
 type: 'bar',
 data: {
-labels: ['2020', '2021', '2022', '2023', '2024', '2025 (Juni)'],
+labels: ['2020', '2021', '2022', '2023', '2024'],
 datasets: [
 {
 label: 'NASDAQ100 (Sparplan)',
@@ -719,6 +717,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
