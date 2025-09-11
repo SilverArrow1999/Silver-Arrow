@@ -623,6 +623,71 @@ document.getElementById('btnSubscribeXRP').addEventListener('click', function() 
 });
 </script>
 
+<div class="chart-container">
+  <canvas id="SOLChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
+</div>
+
+<h2>SOL Strategie vs. Sparplan</h2>
+<table class="performance-table" aria-label="Jahresrenditen SOL Strategie">
+<thead>
+<tr>
+  <th>Kryptowährung</th>
+  <th>2021</th>
+  <th>2022</th>
+  <th>2023</th>
+  <th>2024</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>SOL (Sparplan)</td>
+  <td>112,45%</td>
+  <td>-80,12%</td>
+  <td>456,30%</td>
+  <td>95,10%</td>
+</tr>
+<tr>
+  <td>SOL (Strategie)</td>
+  <td>175,60%</td>
+  <td>-42,50%</td>
+  <td>389,80%</td>
+  <td>128,75%</td>
+</tr>
+<tr>
+  <td>Delta</td>
+  <td class="positive">63,15%</td>
+  <td class="positive">37,62%</td>
+  <td class="negative">-66,50%</td>
+  <td class="positive">33,65%</td>
+</tr>
+</tbody>
+</table>
+
+<div class="signal-card">
+  <h3>SOL Signale</h3>
+  <p>Nutzen Sie unsere Solana Signale.</p>
+
+  <div class="subscribe-container">
+    <label><input type="checkbox" id="chkDatenschutzSOL"> Datenschutzerklärung</label><br>
+    <label><input type="checkbox" id="chkAGBSOL"> AGB akzeptieren</label><br>
+    <button type="button" id="btnSubscribeSOL" class="subscribe-btn">Signale abonnieren</button>
+  </div>
+</div>
+
+<script>
+document.getElementById('btnSubscribeSOL').addEventListener('click', function() {
+  const datenschutz4 = document.getElementById('chkDatenschutzSOL').checked;
+  const agb4 = document.getElementById('chkAGBSOL').checked;
+
+  if(datenschutz4 && agb4) {
+    window.location.href = 'https://buy.stripe.com/dein-sol-stripe-link'; // 👈 Deinen Stripe-Link einsetzen
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
+
+
 
 
 
@@ -859,6 +924,46 @@ const XRPChart = new Chart(ctxXRP, {
 });
 </script>
 
+<script>
+const ctxSOL = document.getElementById('SOLChart').getContext('2d');
+const SOLChart = new Chart(ctxSOL, {
+  type: 'bar',
+  data: {
+    labels: ['2021','2022','2023','2024'],
+    datasets: [
+      {
+        label: 'SOL (Sparplan)',
+        data: [112.45, -80.12, 456.30, 95.10],
+        backgroundColor: 'rgba(192,192,192,0.8)',
+        borderColor: 'rgba(192,192,192,1)',
+        borderWidth: 1
+      },
+      {
+        label: 'SOL (Strategie)',
+        data: [175.60, -42.50, 389.80, 128.75],
+        backgroundColor: 'rgba(30, 144, 255, 0.7)',
+        borderColor: 'rgba(30, 144, 255, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Delta',
+        data: [63.15, 37.62, -66.50, 33.65],
+        backgroundColor: function(context) {
+          const value = context.raw;
+          return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)';
+        },
+        borderColor: function(context) {
+          const value = context.raw;
+          return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
+        },
+        borderWidth: 1
+      }
+    ]
+  },
+  options: {
+    responsive
+
+
 <footer>
   <div class="footer-links">
     <a href="Impressum.html">Impressum</a> |
@@ -873,6 +978,7 @@ const XRPChart = new Chart(ctxXRP, {
 
 </body>
 </html>
+
 
 
 
