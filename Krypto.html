@@ -687,6 +687,69 @@ document.getElementById('btnSubscribeSOL').addEventListener('click', function() 
 });
 </script>
 
+<div class="chart-container">
+  <canvas id="DOGEChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
+</div>
+
+<h2>DOGE Strategie vs. Sparplan</h2>
+<table class="performance-table" aria-label="Jahresrenditen DOGE Strategie">
+<thead>
+<tr>
+  <th>Kryptowährung</th>
+  <th>2021</th>
+  <th>2022</th>
+  <th>2023</th>
+  <th>2024</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>DOGE (Sparplan)</td>
+  <td>3492,10%</td>
+  <td>-64,35%</td>
+  <td>27,42%</td>
+  <td>59,87%</td>
+</tr>
+<tr>
+  <td>DOGE (Strategie)</td>
+  <td>5120,55%</td>
+  <td>-38,21%</td>
+  <td>65,18%</td>
+  <td>102,33%</td>
+</tr>
+<tr>
+  <td>Delta</td>
+  <td class="positive">1628,45%</td>
+  <td class="positive">26,14%</td>
+  <td class="positive">37,76%</td>
+  <td class="positive">42,46%</td>
+</tr>
+</tbody>
+</table>
+
+<div class="signal-card">
+  <h3>DOGE Signale</h3>
+  <p>Nutzen Sie unsere Dogecoin Signale.</p>
+
+  <div class="subscribe-container">
+    <label><input type="checkbox" id="chkDatenschutzDOGE"> Datenschutzerklärung</label><br>
+    <label><input type="checkbox" id="chkAGBDOGE"> AGB akzeptieren</label><br>
+    <button type="button" id="btnSubscribeDOGE" class="subscribe-btn">Signale abonnieren</button>
+  </div>
+</div>
+
+<script>
+document.getElementById('btnSubscribeDOGE').addEventListener('click', function() {
+  const datenschutz5 = document.getElementById('chkDatenschutzDOGE').checked;
+  const agb5 = document.getElementById('chkAGBDOGE').checked;
+
+  if(datenschutz5 && agb5) {
+    window.location.href = 'https://buy.stripe.com/dein-doge-stripe-link'; // 👈 Stripe-Link einsetzen
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
 
 
 
@@ -992,6 +1055,75 @@ const SOLChart = new Chart(ctxSOL, {
 });
 </script>
 
+<script>
+const ctxDOGE = document.getElementById('DOGEChart').getContext('2d');
+const DOGEChart = new Chart(ctxDOGE, {
+  type: 'bar',
+  data: {
+    labels: ['2021','2022','2023','2024'],
+    datasets: [
+      {
+        label: 'DOGE (Sparplan)',
+        data: [3492.10, -64.35, 27.42, 59.87],
+        backgroundColor: 'rgba(192,192,192,0.8)',
+        borderColor: 'rgba(192,192,192,1)',
+        borderWidth: 1
+      },
+      {
+        label: 'DOGE (Strategie)',
+        data: [5120.55, -38.21, 65.18, 102.33],
+        backgroundColor: 'rgba(30, 144, 255, 0.7)',
+        borderColor: 'rgba(30, 144, 255, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Delta',
+        data: [1628.45, 26.14, 37.76, 42.46],
+        backgroundColor: function(context) {
+          const value = context.raw;
+          return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)';
+        },
+        borderColor: function(context) {
+          const value = context.raw;
+          return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
+        },
+        borderWidth: 1
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: { color: 'silver' }
+      },
+      title: {
+        display: true,
+        text: 'Jahresrenditen: DOGE (Sparplan) vs. DOGE (Strategie)',
+        color: 'silver',
+        font: { size: 18 }
+      }
+    },
+    scales: {
+      x: { ticks: { color: 'silver' } },
+      y: {
+        ticks: {
+          color: 'silver',
+          callback: function(value) { return value + '%'; }
+        },
+        title: {
+          display: true,
+          text: 'Rendite in %',
+          color: 'silver'
+        },
+        grid: { color: '#333' }
+      }
+    }
+  }
+});
+</script>
+
+
 
 
 <footer>
@@ -1008,6 +1140,7 @@ const SOLChart = new Chart(ctxSOL, {
 
 </body>
 </html>
+
 
 
 
