@@ -547,6 +547,83 @@ document.getElementById('btnSubscribeETH').addEventListener('click', function() 
 });
 </script>
 
+<div class="chart-container">
+  <canvas id="XRPChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
+</div>
+
+<h2>XRP Strategie vs. Sparplan</h2>
+<table class="performance-table" aria-label="Jahresrenditen XRP Strategie">
+<thead>
+<tr>
+<th>Kryptowährung</th>
+<th>2018</th>
+<th>2019</th>
+<th>2020</th>
+<th>2021</th>
+<th>2022</th>
+<th>2023</th>
+<th>2024</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XRP (Sparplan)</td>
+<td>-80,12%</td>
+<td>-44,20%</td>
+<td>12,35%</td>
+<td>245,00%</td>
+<td>-57,82%</td>
+<td>91,32%</td>
+<td>50,12%</td>
+</tr>
+<tr>
+<td>XRP (Strategie)</td>
+<td>-30,50%</td>
+<td>22,10%</td>
+<td>65,40%</td>
+<td>180,22%</td>
+<td>-25,50%</td>
+<td>77,00%</td>
+<td>72,85%</td>
+</tr>
+<tr>
+<td>Delta</td>
+<td class="positive">49,62%</td>
+<td class="positive">66,30%</td>
+<td class="positive">53,05%</td>
+<td class="negative">-64,78%</td>
+<td class="positive">32,32%</td>
+<td class="negative">-14,32%</td>
+<td class="positive">22,73%</td>
+</tr>
+</tbody>
+</table>
+
+<div class="signal-card">
+  <h3>XRP Signale</h3>
+  <p>Nutzen Sie unsere XRP Signale.</p>
+
+  <div class="subscribe-container">
+    <label><input type="checkbox" id="chkDatenschutzXRP"> Datenschutzerklärung</label><br>
+    <label><input type="checkbox" id="chkAGBXRP"> AGB akzeptieren</label><br>
+    <button type="button" id="btnSubscribeXRP" class="subscribe-btn">Signale abonnieren</button>
+  </div>
+</div>
+
+<script>
+document.getElementById('btnSubscribeXRP').addEventListener('click', function() {
+  const datenschutz3 = document.getElementById('chkDatenschutzXRP').checked;
+  const agb3 = document.getElementById('chkAGBXRP').checked;
+
+  if(datenschutz3 && agb3) {
+    window.location.href = 'https://buy.stripe.com/dein-xrp-stripe-link'; // 👈 Stripe-Link hier einsetzen
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
+
+
 
 
 <div class="disclaimer">
@@ -727,6 +804,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
