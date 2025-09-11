@@ -705,24 +705,24 @@ document.getElementById('btnSubscribeSOL').addEventListener('click', function() 
 <tbody>
 <tr>
   <td>DOGE (Sparplan)</td>
-  <td>3492,10%</td>
-  <td>-64,35%</td>
-  <td>27,42%</td>
-  <td>59,87%</td>
+  <td>348,07%</td>
+  <td>-26,00%</td>
+  <td>20,94%</td>
+  <td>147,81%</td>
 </tr>
 <tr>
   <td>DOGE (Strategie)</td>
-  <td>5120,55%</td>
-  <td>-38,21%</td>
-  <td>65,18%</td>
-  <td>102,33%</td>
+  <td>472,04%</td>
+  <td>-34,49%</td>
+  <td>18,44%</td>
+  <td>350,59%</td>
 </tr>
 <tr>
   <td>Delta</td>
-  <td class="positive">1628,45%</td>
-  <td class="positive">26,14%</td>
-  <td class="positive">37,76%</td>
-  <td class="positive">42,46%</td>
+  <td class="positive">123,97%</td>
+  <td class="negative">-8,49%</td>
+  <td class="negative">-2,50%</td>
+  <td class="positive">202,78%</td>
 </tr>
 </tbody>
 </table>
@@ -1064,21 +1064,21 @@ const DOGEChart = new Chart(ctxDOGE, {
     datasets: [
       {
         label: 'DOGE (Sparplan)',
-        data: [3492.10, -64.35, 27.42, 59.87],
+        data: [348.07, -26.00, 20.94, 147.81],
         backgroundColor: 'rgba(192,192,192,0.8)',
         borderColor: 'rgba(192,192,192,1)',
         borderWidth: 1
       },
       {
         label: 'DOGE (Strategie)',
-        data: [5120.55, -38.21, 65.18, 102.33],
+        data: [472.04, -34.49, 18.44, 350.59],
         backgroundColor: 'rgba(30, 144, 255, 0.7)',
         borderColor: 'rgba(30, 144, 255, 1)',
         borderWidth: 1
       },
       {
         label: 'Delta',
-        data: [1628.45, 26.14, 37.76, 42.46],
+        data: [123.97, -8.49, -2.50, 202.78],
         backgroundColor: function(context) {
           const value = context.raw;
           return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)';
@@ -1140,6 +1140,7 @@ const DOGEChart = new Chart(ctxDOGE, {
 
 </body>
 </html>
+
 
 
 
