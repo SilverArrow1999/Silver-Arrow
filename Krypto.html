@@ -790,6 +790,75 @@ color: '#333'
 }
 });
 </script>
+
+<script>
+const ctxXRP = document.getElementById('XRPChart').getContext('2d');
+const XRPChart = new Chart(ctxXRP, {
+  type: 'bar',
+  data: {
+    labels: ['2018','2019','2020','2021','2022','2023','2024'],
+    datasets: [
+      {
+        label: 'XRP (Sparplan)',
+        data: [-80.12, -44.20, 12.35, 245.00, -57.82, 91.32, 50.12],
+        backgroundColor: 'rgba(192,192,192,0.8)',
+        borderColor: 'rgba(192,192,192,1)',
+        borderWidth: 1
+      },
+      {
+        label: 'XRP (Strategie)',
+        data: [-30.50, 22.10, 65.40, 180.22, -25.50, 77.00, 72.85],
+        backgroundColor: 'rgba(30, 144, 255, 0.7)',
+        borderColor: 'rgba(30, 144, 255, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Delta',
+        data: [49.62, 66.30, 53.05, -64.78, 32.32, -14.32, 22.73],
+        backgroundColor: function(context) {
+          const value = context.raw;
+          return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)';
+        },
+        borderColor: function(context) {
+          const value = context.raw;
+          return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
+        },
+        borderWidth: 1
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: { color: 'silver' }
+      },
+      title: {
+        display: true,
+        text: 'Jahresrenditen: XRP (Sparplan) vs. XRP (Strategie)',
+        color: 'silver',
+        font: { size: 18 }
+      }
+    },
+    scales: {
+      x: { ticks: { color: 'silver' } },
+      y: {
+        ticks: {
+          color: 'silver',
+          callback: function(value) { return value + '%'; }
+        },
+        title: {
+          display: true,
+          text: 'Rendite in %',
+          color: 'silver'
+        },
+        grid: { color: '#333' }
+      }
+    }
+  }
+});
+</script>
+
 <footer>
   <div class="footer-links">
     <a href="Impressum.html">Impressum</a> |
@@ -804,6 +873,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
