@@ -568,33 +568,33 @@ document.getElementById('btnSubscribeETH').addEventListener('click', function() 
 <tbody>
 <tr>
 <td>XRP (Sparplan)</td>
-<td>-80,12%</td>
-<td>-44,20%</td>
-<td>12,35%</td>
-<td>245,00%</td>
-<td>-57,82%</td>
-<td>91,32%</td>
-<td>50,12%</td>
+<td>-37,51%</td>
+<td>-36,84%</td>
+<td>-4,64%</td>
+<td>30,29%</td>
+<td>-29,90%</td>
+<td>27,06%</td>
+<td>253,90%</td>
 </tr>
 <tr>
 <td>XRP (Strategie)</td>
-<td>-30,50%</td>
-<td>22,10%</td>
-<td>65,40%</td>
-<td>180,22%</td>
-<td>-25,50%</td>
-<td>77,00%</td>
-<td>72,85%</td>
+<td>45,02%</td>
+<td>-25,80%</td>
+<td>232,79%</td>
+<td>115,97%</td>
+<td>-11,95%</td>
+<td>11,27%</td>
+<td>204,51%</td>
 </tr>
 <tr>
 <td>Delta</td>
-<td class="positive">49,62%</td>
-<td class="positive">66,30%</td>
-<td class="positive">53,05%</td>
-<td class="negative">-64,78%</td>
-<td class="positive">32,32%</td>
-<td class="negative">-14,32%</td>
-<td class="positive">22,73%</td>
+<td class="positive">82,53%</td>
+<td class="positive">11,04%</td>
+<td class="positive">237,43%</td>
+<td class="positive">85,68%</td>
+<td class="positive">17,95%</td>
+<td class="negative">-15,79%</td>
+<td class="negative">-49,39%</td>
 </tr>
 </tbody>
 </table>
@@ -800,21 +800,21 @@ const XRPChart = new Chart(ctxXRP, {
     datasets: [
       {
         label: 'XRP (Sparplan)',
-        data: [-80.12, -44.20, 12.35, 245.00, -57.82, 91.32, 50.12],
+        data: [-37.51, -36.84, -4.64, 30.29, -29.90, 27.06, 253.90],
         backgroundColor: 'rgba(192,192,192,0.8)',
         borderColor: 'rgba(192,192,192,1)',
         borderWidth: 1
       },
       {
         label: 'XRP (Strategie)',
-        data: [-30.50, 22.10, 65.40, 180.22, -25.50, 77.00, 72.85],
+        data: [45.02, -25.80, 232.79, 115.97, -11.95, 11.27, 204.51],
         backgroundColor: 'rgba(30, 144, 255, 0.7)',
         borderColor: 'rgba(30, 144, 255, 1)',
         borderWidth: 1
       },
       {
         label: 'Delta',
-        data: [49.62, 66.30, 53.05, -64.78, 32.32, -14.32, 22.73],
+        data: [82.53, 11.04, 237.43, 85.68, 17.95, -15.79, -49.39],
         backgroundColor: function(context) {
           const value = context.raw;
           return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)';
@@ -873,6 +873,7 @@ const XRPChart = new Chart(ctxXRP, {
 
 </body>
 </html>
+
 
 
 
