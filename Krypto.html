@@ -641,24 +641,24 @@ document.getElementById('btnSubscribeXRP').addEventListener('click', function() 
 <tbody>
 <tr>
   <td>SOL (Sparplan)</td>
-  <td>112,45%</td>
-  <td>-80,12%</td>
-  <td>456,30%</td>
-  <td>95,10%</td>
+  <td>1543,05%</td>
+  <td>-76,38%</td>
+  <td>376,58%</td>
+  <td>44,64%</td>
 </tr>
 <tr>
   <td>SOL (Strategie)</td>
-  <td>175,60%</td>
-  <td>-42,50%</td>
-  <td>389,80%</td>
-  <td>128,75%</td>
+  <td>4244,25%</td>
+  <td>-64,36%</td>
+  <td>414,53%</td>
+  <td>76,48%</td>
 </tr>
 <tr>
   <td>Delta</td>
-  <td class="positive">63,15%</td>
-  <td class="positive">37,62%</td>
-  <td class="negative">-66,50%</td>
-  <td class="positive">33,65%</td>
+  <td class="positive">2701,20%</td>
+  <td class="positive">12,02%</td>
+  <td class="negative">37,95%</td>
+  <td class="positive">44,64%</td>
 </tr>
 </tbody>
 </table>
@@ -933,21 +933,21 @@ const SOLChart = new Chart(ctxSOL, {
     datasets: [
       {
         label: 'SOL (Sparplan)',
-        data: [320.50, -81.20, 456.00, 120.45],
+        data: [1543.05, -76.38, 376.58, 31.84],
         backgroundColor: 'rgba(192,192,192,0.8)',
         borderColor: 'rgba(192,192,192,1)',
         borderWidth: 1
       },
       {
         label: 'SOL (Strategie)',
-        data: [510.30, -45.60, 390.10, 180.75],
+        data: [4244.25, -64.36, 414.53, 76.48],
         backgroundColor: 'rgba(30, 144, 255, 0.7)',
         borderColor: 'rgba(30, 144, 255, 1)',
         borderWidth: 1
       },
       {
         label: 'Delta',
-        data: [189.80, 35.60, -65.90, 60.30],
+        data: [2701.20, 12.02, 37.95, 44.64],
         backgroundColor: function(context) {
           const value = context.raw;
           return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)';
@@ -1008,6 +1008,7 @@ const SOLChart = new Chart(ctxSOL, {
 
 </body>
 </html>
+
 
 
 
