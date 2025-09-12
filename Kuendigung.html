@@ -167,11 +167,25 @@
     .checkbox-label a { color: #4caf50; text-decoration: underline; }
     fieldset { border: 1px solid #444; border-radius: 6px; padding: 15px; }
     legend { font-weight: 600; color: silver; }
-    @media (max-width: 600px) {
-      header { padding: 15px 20px; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
-      header h1 { font-size: 1.5rem; }
-      header h1 span.slogan { font-size: 1rem; margin-top: 3px; }
-      header img { height: 60px; align-self: flex-end; margin-top: 10px; }
+@media (max-width: 600px) {
+  header {
+    padding: 15px 20px; /* weniger Padding */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%; /* statt 100vw */
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header h1 span.slogan {
+    font-size: 1rem;
+    margin-top: 3px;
+  }
+  header img {
+    height: 60px;
+    align-self: flex-end;
+  }
       nav { padding: 10px; }
       nav .nav-list { flex-direction: column; gap: 15px; align-items: center; }
       main { padding: 15px 10px; max-width: 100%; margin-left: 0; margin-right: 0; }
