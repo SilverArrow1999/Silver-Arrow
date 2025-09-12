@@ -1,128 +1,492 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Silver Arrow – Signale abonnieren</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 20px;
-      background: #f5f5f5;
-    }
-    h1 {
-      text-align: center;
-    }
-    form {
-      max-width: 500px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, select, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-    button {
-      margin-top: 20px;
-      background: #0077cc;
-      color: #fff;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #005fa3;
-    }
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
-      margin-top: 15px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Silver Arrow - Abonnements </title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background: #000;
+color: silver;
+margin: 0;
+padding: 0;
+position: relative;
+}
+header {
+background-color: #111;
+color: silver;
+padding: 20px 40px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: relative;
+z-index: 3;
+width: 100vw;
+box-sizing: border-box;
+}
+header img {
+height: 80px;
+}
+header h1 {
+margin: 0;
+font-size: 2rem;
+display: flex;
+flex-direction: column;
+}
+header h1 span.slogan {
+font-weight: normal;
+font-size: 1.2rem;
+color: #bbb;
+margin-top: 5px;
+font-style: italic;
+}
+nav {
+background-color: #222;
+padding: 10px 20px;
+z-index: 4;
+}
+.nav-list {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+gap: 30px;
+}
+.nav-list a {
+color: silver;
+text-decoration: none;
+font-weight: 600;
+font-size: 1rem;
+padding: 6px 12px;
+border-radius: 6px;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav-list a:hover,
+.nav-list a:focus {
+background-color: #4caf50;
+color: white;
+outline: none;
+}
+.nav-list a.active {
+background-color: #45a049;
+color: white;
+}
+main {
+padding: 20px;
+z-index: 2;
+max-width: 1200px;
+margin-left: auto;
+margin-right: auto;
+}
+main h2 {
+text-align: center;
+color: silver;
+margin-bottom: 30px;
+}
+.strategy-overview {
+background: #111;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+margin-bottom: 40px;
+max-width: 900px;
+margin-left: auto;
+margin-right: auto;
+}
+.strategy-overview p {
+font-size: 1.1rem;
+line-height: 1.6;
+color: silver;
+margin: 0;
+}
+table.performance-table {
+width: 100%;
+max-width: 900px;
+margin: 20px auto 40px auto;
+border-collapse: collapse;
+color: silver;
+font-size: 0.9rem;
+}
+table.performance-table th,
+table.performance-table td {
+border: 1px solid #444;
+padding: 8px 12px;
+text-align: center;
+white-space: nowrap;
+}
+table.performance-table th {
+background-color: #222;
+}
+.positive {
+color: #4CAF50; /* Grün */
+font-weight: 600;
+}
+
+.negative {
+color: #FFC107; /* Gelb */
+font-weight: 600;
+}
+.signal-section {
+display: flex;
+gap: 30px;
+flex-wrap: wrap;
+justify-content: center;
+}
+.signal-card {
+background: #111;
+padding: 25px 30px;
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+width: 300px;
+text-align: center;
+color: silver;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.signal-card h3 {
+margin-top: 0;
+margin-bottom: 15px;
+font-size: 1.6rem;
+}
+.signal-card p {
+flex-grow: 1;
+font-size: 1rem;
+margin-bottom: 20px;
+line-height: 1.4;
+}
+.subscribe-btn {
+background-color: #4CAF50;
+color: white;
+border: none;
+padding: 12px 20px;
+font-size: 1rem;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-decoration: none;
+display: inline-block;
+}
+.subscribe-btn:hover {
+background-color: #45a049;
+}
+.fußnote {
+margin-top: 40px;
+font-size: 0.9rem;
+color: #999;
+font-style: italic;
+text-align: center;
+max-width: 900px;
+margin-left: auto;
+margin-right: auto;
+line-height: 1.4;
+}
+.disclaimer {
+margin-top: 40px;
+font-size: 0.9rem;
+color: #999;
+font-style: italic;
+text-align: center;
+max-width: 900px;
+margin-left: auto;
+margin-right: auto;
+line-height: 1.4;
+}
+.background-logo {
+position: fixed;
+top: 150px;
+left: 50%;
+transform: translateX(-50%);
+opacity: 0.15;
+z-index: 1;
+width: 90%;
+max-width: 1200px;
+pointer-events: none;
+user-select: none;
+}
+  @media (max-width: 600px) {
+  header {
+    padding: 15px 20px; /* weniger Padding */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%; /* statt 100vw */
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header h1 span.slogan {
+    font-size: 1rem;
+    margin-top: 3px;
+  }
+  header img {
+    height: 60px;
+    align-self: flex-end;
+  }
+
+  nav {
+    padding: 10px;
+  }
+  nav .nav-list {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  main {
+    padding: 15px 10px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Für Startseite */
+  .intro {
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 15px;
+  }
+  .feature-section {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 20px;
+  }
+  .feature-card {
+    width: 100%;
+    padding: 20px;
+  }
+  .fußnote {
+    max-width: 100%;
+    padding: 0 10px;
+    font-size: 0.85rem;
+  }
+  .disclaimer {
+    max-width: 100%;
+    padding: 0 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Für Strategie-Seite */
+  .strategy-overview {
+    padding: 15px;
+    margin: 10px;
+  }
+  table.performance-table {
+    font-size: 0.8rem;
+  }
+  table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+}
+
+ @media (max-width: 600px) {
+  ...
+  .signal-section {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;            /* Container nimmt volle Breite */
+    box-sizing: border-box; /* Padding/Borders werden mitgerechnet */
+    padding: 0 10px;        /* Innenabstand links/rechts */
+  }
+  .signal-card {
+    width: 100%;            /* Volle Breite des Containers */
+    max-width: 400px;       /* max. Breite, damit es nicht zu breit wird */
+    box-sizing: border-box;
+    margin: 0 auto;         /* zentriert die Karte horizontal */
+    padding: 20px;          /* Innenabstand in der Karte */
+  }
+  ...
+}
+
+.chart-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+canvas {
+  width: 600px !important;  /* Fixe Breite für Scrollen */
+  height: 300px !important; /* Höhe wie vorher, damit die Balken gut sichtbar sind */
+}
+
+
+
+  .background-logo {
+    top: 100px;
+    width: 100%;
+    max-width: none;
+  }
+}
+  @media (max-width: 768px) {
+  .chart-container {
+    overflow-x: auto;       /* horizontales Scrollen erlauben */
+    -webkit-overflow-scrolling: touch; /* für flüssiges Scrollen auf iOS */
+    width: 100%;            /* volle Breite des Containers */
+  }
+  .chart-container canvas {
+    min-width: 900px;       /* mindestens so breit wie dein Chart */
+  }
+}
+footer {
+  background-color: #111;
+  color: silver;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer .footer-links a {
+  color: silver;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.9rem;
+}
+
+footer .footer-links a:hover {
+  color: #4CAF50;
+}
+
+footer .footer-copy {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+
+  
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>Signale abonnieren</h1>
+<header>
+<h1>
+Silver Arrow
+<span class="slogan">Märkte im Blick</span>
+</h1>
+<img src="Logo Silver Arrow.png" alt="Silver Arrow Logo" />
+</header>
 
-  <form id="signalForm">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="Name" required>
+<nav>
+  <ul class="nav-list">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="Krypto.html">Kryptostrategien</a></li>
+    <li><a href="Indices.html" class="active">Indices Strategien</a></li>
+    <li><a href="Kontakt.html">Kontakt</a></li>
+  </ul>
+</nav>
 
-    <label for="email">E-Mail</label>
-    <input type="email" id="email" name="Email" required>
 
-    <label for="channel">Bevorzugter Kanal</label>
-    <select id="channel" name="Kanal" required onchange="updateContactField()">
-      <option value="">Bitte wählen...</option>
-      <option value="Email">E-Mail</option>
-      <option value="WhatsApp">WhatsApp</option>
-      <option value="Telegram">Telegram</option>
-      <option value="Instagram">Instagram</option>
-    </select>
+<main>
+<h2>Alle Abonnements im Überblick</h2>
 
-    <div id="extraField"></div>
 
-    <label class="checkbox-label">
-      <input type="checkbox" required>
-      Ich akzeptiere die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.
-    </label>
 
-    <button type="submit">Weiter zur Zahlung</button>
-  </form>
+<section class="strategy-overview">
+<p>
+Hier finden Sie eine Übersicht aller verfügbaren Abonnement-Modelle. Die angebotenen Signale verstehen sich ausschließlich als allgemeine Informationen und stellen weder eine Anlageberatung noch eine Empfehlung dar.
+</p>
 
-  <script>
-    function updateContactField() {
-      const channel = document.getElementById("channel").value;
-      const extraField = document.getElementById("extraField");
-      extraField.innerHTML = "";
+</section>
 
-      if (channel === "WhatsApp" || channel === "Telegram") {
-        extraField.innerHTML = `
-          <label for="phone">Telefonnummer</label>
-          <input type="text" id="phone" name="Telefonnummer" required>
-        `;
-      } else if (channel === "Instagram") {
-        extraField.innerHTML = `
-          <label for="insta">Instagram-Nutzername</label>
-          <input type="text" id="insta" name="Instagram" required>
-        `;
-      }
-    }
+<div class="signal-section">
 
-    document.getElementById("signalForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+  <div class="signal-card">
+    <h3>S&amp;P 500 Signale</h3>
+    <p>Nutzen Sie unsere S&amp;P 500 Signale.</p>
+    
+    <div class="subscribe-container">
+      <label><input type="checkbox" id="chkDatenschutzSP"> Datenschutzerklärung</label><br>
+      <label><input type="checkbox" id="chkAGBSP"> AGB akzeptieren</label><br>
+      <button type="button" id="btnSubscribeSP" class="subscribe-btn">Signale abonnieren</button>
+    </div>
+  </div>
 
-      const formData = new FormData(this);
+</div>
 
-      // Hier _next Parameter setzen → Ziel: Stripe Checkout
-      formData.append("_next", "https://buy.stripe.com/5kQ14f1391n42zieM05J600");
+<script>
+document.getElementById('btnSubscribeSP').addEventListener('click', function() {
+  const datenschutz1 = document.getElementById('chkDatenschutzSP').checked;
+  const agb1 = document.getElementById('chkAGBSP').checked;
 
-      fetch("https://formsubmit.co/xxs.i.l.v.e.r.a.r.r.o.w.1.9.9.9xx@gmail.com", {
-        method: "POST",
-        body: formData
-      }).then(() => {
-        // Optional: manuell weiterleiten, falls FormSubmit-Redirect nicht klappt
-        window.location.href = "https://buy.stripe.com/5kQ14f1391n42zieM05J600";
-      }).catch(() => {
-        alert("Fehler beim Senden. Bitte erneut versuchen.");
-      });
-    });
-  </script>
+  if(datenschutz1 && agb1) {
+    window.location.href = 'https://buy.stripe.com/5kQ14f1391n42zieM05J600';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
+
+
+
+
+
+
+<div class="signal-card">
+  <h3>NASDAQ 100 Signale</h3>
+  <p>Nutzen Sie unsere NASDAQ 100 Signale.</p>
+
+  <div class="subscribe-container">
+    <label><input type="checkbox" id="chkDatenschutzNSDQ"> Datenschutzerklärung</label><br>
+    <label><input type="checkbox" id="chkAGBNSDQ"> AGB akzeptieren</label><br>
+    <button type="button" id="btnSubscribeNSDQ" class="subscribe-btn">Signale abonnieren</button>
+  </div>
+</div>
+
+<script>
+document.getElementById('btnSubscribeNSDQ').addEventListener('click', function() {
+  const datenschutz2 = document.getElementById('chkDatenschutzNSDQ').checked;
+  const agb2 = document.getElementById('chkAGBNSDQ').checked;
+
+  if(datenschutz2 && agb2) {
+    window.location.href = 'https://buy.stripe.com/fZu9AL7rx0j01vefQ45J601';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
+
+
+
+<div class="disclaimer">
+<p><strong>Disclaimer:</strong> Diese Webseite stellt keine Finanz- oder Anlageberatung dar. Es werden ausschließlich Informationen bereitgestellt, auf deren Basis Kunden eigenständig Handelsentscheidungen treffen können.</p>
+</div>
+</main>
+
+<img src="Logo Silver Arrow.png" alt="Hintergrundlogo" class="background-logo" />
+
+<footer>
+  <div class="footer-links">
+    <a href="Impressum.html">Impressum</a> |
+    <a href="Datenschutz.html">Datenschutz</a> |
+    <a href="AGBseite.html">AGB</a> |
+    <a href="Kontakt.html">Kontakt</a> |
+    <a href="Kuendigung.html">Verträge hier kündigen</a>
+  </div>
+  <p class="footer-copy">&copy; 2025 Silver Arrow – Alle Rechte vorbehalten.</p>
+</footer>
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
