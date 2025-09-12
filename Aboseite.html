@@ -129,23 +129,25 @@ color: #FFC107; /* Gelb */
 font-weight: 600;
 }
 .signal-section {
-display: flex;
-gap: 30px;
-flex-wrap: wrap;
-justify-content: center;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* sorgt für gleiche Höhe */
 }
 .signal-card {
-background: #111;
-padding: 25px 30px;
-border-radius: 10px;
-box-shadow: 0 2px 10px rgba(255,255,255,0.1);
-width: 300px;
-text-align: center;
-color: silver;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  background: #111;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+  width: 300px;
+  text-align: center;
+  color: silver;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .signal-card h3 {
 margin-top: 0;
 margin-bottom: 15px;
@@ -398,7 +400,6 @@ Hier finden Sie eine Übersicht aller verfügbaren Abonnement-Modelle. Die angeb
   <div class="signal-card">
     <h3>S&amp;P 500 Signale</h3>
     <p>Nutzen Sie unsere S&amp;P 500 Signale.</p>
-    
     <div class="subscribe-container">
       <label><input type="checkbox" id="chkDatenschutzSP"> Datenschutzerklärung</label><br>
       <label><input type="checkbox" id="chkAGBSP"> AGB akzeptieren</label><br>
@@ -406,56 +407,19 @@ Hier finden Sie eine Übersicht aller verfügbaren Abonnement-Modelle. Die angeb
     </div>
   </div>
 
-</div>
-
-<script>
-document.getElementById('btnSubscribeSP').addEventListener('click', function() {
-  const datenschutz1 = document.getElementById('chkDatenschutzSP').checked;
-  const agb1 = document.getElementById('chkAGBSP').checked;
-
-  if(datenschutz1 && agb1) {
-    window.location.href = 'https://buy.stripe.com/5kQ14f1391n42zieM05J600';
-  } else {
-    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
-  }
-});
-</script>
-
-
-
-
-
-
-<div class="signal-card">
-  <h3>NASDAQ 100 Signale</h3>
-  <p>Nutzen Sie unsere NASDAQ 100 Signale.</p>
-
-  <div class="subscribe-container">
-    <label><input type="checkbox" id="chkDatenschutzNSDQ"> Datenschutzerklärung</label><br>
-    <label><input type="checkbox" id="chkAGBNSDQ"> AGB akzeptieren</label><br>
-    <button type="button" id="btnSubscribeNSDQ" class="subscribe-btn">Signale abonnieren</button>
+  <div class="signal-card">
+    <h3>NASDAQ 100 Signale</h3>
+    <p>Nutzen Sie unsere NASDAQ 100 Signale.</p>
+    <div class="subscribe-container">
+      <label><input type="checkbox" id="chkDatenschutzNSDQ"> Datenschutzerklärung</label><br>
+      <label><input type="checkbox" id="chkAGBNSDQ"> AGB akzeptieren</label><br>
+      <button type="button" id="btnSubscribeNSDQ" class="subscribe-btn">Signale abonnieren</button>
+    </div>
   </div>
-</div>
-
-<script>
-document.getElementById('btnSubscribeNSDQ').addEventListener('click', function() {
-  const datenschutz2 = document.getElementById('chkDatenschutzNSDQ').checked;
-  const agb2 = document.getElementById('chkAGBNSDQ').checked;
-
-  if(datenschutz2 && agb2) {
-    window.location.href = 'https://buy.stripe.com/fZu9AL7rx0j01vefQ45J601';
-  } else {
-    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
-  }
-});
-</script>
-
-<div class="signal-section">
 
   <div class="signal-card">
     <h3>Indices: S&amp;P 500 + NASDAQ 100 Signale</h3>
     <p>Nutzen Sie unsere S&amp;P 500 und NASDAQ 100 Signale.</p>
-    
     <div class="subscribe-container">
       <label><input type="checkbox" id="chkDatenschutzSPNS"> Datenschutzerklärung</label><br>
       <label><input type="checkbox" id="chkAGBSPNS"> AGB akzeptieren</label><br>
@@ -465,18 +429,6 @@ document.getElementById('btnSubscribeNSDQ').addEventListener('click', function()
 
 </div>
 
-<script>
-document.getElementById('btnSubscribeSPNS').addEventListener('click', function() {
-  const datenschutz3 = document.getElementById('chkDatenschutzSPNS').checked;
-  const agb3 = document.getElementById('chkAGBSPNS').checked;
-
-  if(datenschutz3 && agb3) {
-    window.location.href = 'https://buy.stripe.com/5kQ14f1391n42zieM05J600';
-  } else {
-    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
-  }
-});
-</script>
 
 
 
