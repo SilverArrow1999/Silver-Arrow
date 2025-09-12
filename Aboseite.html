@@ -450,6 +450,34 @@ document.getElementById('btnSubscribeNSDQ').addEventListener('click', function()
 });
 </script>
 
+<div class="signal-section">
+
+  <div class="signal-card">
+    <h3>Indices: S&amp;P 500 + NASDAQ 100 Signale</h3>
+    <p>Nutzen Sie unsere S&amp;P 500 und NASDAQ 100 Signale.</p>
+    
+    <div class="subscribe-container">
+      <label><input type="checkbox" id="chkDatenschutzSPNS"> Datenschutzerklärung</label><br>
+      <label><input type="checkbox" id="chkAGBSPNS"> AGB akzeptieren</label><br>
+      <button type="button" id="btnSubscribeSPNS" class="subscribe-btn">Signale abonnieren</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+document.getElementById('btnSubscribeSPNS').addEventListener('click', function() {
+  const datenschutz3 = document.getElementById('chkDatenschutzSPNS').checked;
+  const agb3 = document.getElementById('chkAGBSPNS').checked;
+
+  if(datenschutz3 && agb3) {
+    window.location.href = 'https://buy.stripe.com/5kQ14f1391n42zieM05J600';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
+
 
 
 
