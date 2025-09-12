@@ -172,6 +172,17 @@ display: inline-block;
 .subscribe-btn:hover {
 background-color: #45a049;
 }
+.fußnote {
+margin-top: 40px;
+font-size: 0.9rem;
+color: #999;
+font-style: italic;
+text-align: center;
+max-width: 900px;
+margin-left: auto;
+margin-right: auto;
+line-height: 1.4;
+}
 .disclaimer {
 margin-top: 40px;
 font-size: 0.9rem;
@@ -248,6 +259,11 @@ user-select: none;
   .feature-card {
     width: 100%;
     padding: 20px;
+  }
+  .fußnote {
+    max-width: 100%;
+    padding: 0 10px;
+    font-size: 0.85rem;
   }
   .disclaimer {
     max-width: 100%;
@@ -389,7 +405,7 @@ Ob als Ergänzung zu klassischen ETF-Sparplänen oder als eigenständige Strateg
   <canvas id="performanceChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
 </div>
 
-<h2>S&P 500 Strategie vs. Sparplan</h2>
+<h2>S&P 500 Strategie vs. Sparplan*</h2>
 <table class="performance-table" aria-label="Jahresrenditen S&P 500 Strategien">
 <thead>
 <tr>
@@ -457,8 +473,7 @@ document.getElementById('btnSubscribeSP').addEventListener('click', function() {
   }
 });
 </script>
-<!-- Chart -->
-<p>Strategie-Performance S&P 500*</p>
+
 
 
 
@@ -470,7 +485,7 @@ document.getElementById('btnSubscribeSP').addEventListener('click', function() {
 
 
 
-<h2>NASDAQ 100 Strategie vs. Sparplan</h2>
+<h2>NASDAQ 100 Strategie vs. Sparplan*</h2>
 <table class="performance-table" aria-label="Jahresrenditen NASDAQ 100 Strategien">
 <thead>
 <tr>
@@ -536,12 +551,9 @@ document.getElementById('btnSubscribeNSDQ').addEventListener('click', function()
   }
 });
 </script>
-<!-- Chart -->
-<p>Strategie-Performance Nasdaq*</p>
-
-<!-- Fußnote -->
+<div class="fußnote">
 <p><em>* Alle dargestellten Renditen sind vor Kosten berechnet. Berechnungsgrundlage sind die Kurse und relevanten Knock-Out-Schwellen der für die jeweilige Strategie herangezogenen Instrumente. Für Nasdaq-Renditen wurden die FXCM CFD-Kurse genutzt, bereitgestellt über TradingView. Für S&P 500-Renditen wurden die BlackBull Markets CFD-Kurse über TradingView verwendet. Historische Renditen sind keine Garantie für künftige Entwicklungen.</em></p>
-
+</div>
 
 
 <div class="disclaimer">
@@ -722,6 +734,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
