@@ -206,14 +206,13 @@ max-width: 1200px;
 pointer-events: none;
 user-select: none;
 }
-@media (max-width: 600px) {
+  @media (max-width: 600px) {
   header {
-    padding: 15px 20px;
+    padding: 15px 20px; /* weniger Padding */
     flex-direction: column;
-    /* Je nachdem: center oder flex-start */
-    align-items: center; /* oder flex-start */
+    align-items: flex-start;
     gap: 10px;
-    width: 100%;
+    width: 100%; /* statt 100vw */
   }
   header h1 {
     font-size: 1.5rem;
@@ -224,9 +223,7 @@ user-select: none;
   }
   header img {
     height: 60px;
-    /* align-self oder margin-top */
     align-self: flex-end;
-    margin-top: 10px; /* je nachdem was besser aussieht */
   }
 
   nav {
@@ -734,6 +731,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
