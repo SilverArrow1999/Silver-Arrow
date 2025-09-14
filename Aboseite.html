@@ -445,11 +445,22 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
 
-        <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/5kQ14f1391n42zieM05J600">Weiter zur Kasse</button>
-
+        <button type="button" id="btnSubscribeSP" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
-  
+    <script>
+document.getElementById('btnSubscribeSP').addEventListener('click', function() {
+  const datenschutz1 = document.getElementById('chkDatenschutzSP').checked;
+  const agb1 = document.getElementById('chkAGBSP').checked;
+
+  if(datenschutz1 && agb1) {
+    window.location.href = 'https://buy.stripe.com/5kQ14f1391n42zieM05J600';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
+
     <div class="signal-card">
       <h3>NASDAQ 100 Informationen</h3>
       <p class="abo-details">
@@ -470,10 +481,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBNSDQ">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-          <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/fZu9AL7rx0j01vefQ45J601">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeNSDQ" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeNSDQ').addEventListener('click', function() {
+  const datenschutz2 = document.getElementById('chkDatenschutzNSDQ').checked;
+  const agb2 = document.getElementById('chkAGBNSDQ').checked;
 
+  if(datenschutz2 && agb2) {
+    window.location.href = 'https://buy.stripe.com/fZu9AL7rx0j01vefQ45J601';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
     <div class="signal-card">
       <h3>Indices: S&amp;P 500 + NASDAQ 100 Informationen</h3>
 <p class="abo-details">
@@ -494,12 +516,23 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBSPNS">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-        <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/28EfZ98vB7Ls4Hq1Ze5J607">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeSPNS" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
 
   </div>
- <!-- Ende Indices -->
+  <script>
+document.getElementById('btnSubscribeSPNS').addEventListener('click', function() {
+  const datenschutz3 = document.getElementById('chkDatenschutzSPNS').checked;
+  const agb3 = document.getElementById('chkAGBSPNS').checked;
+
+  if(datenschutz3 && agb3) {
+    window.location.href = 'https://buy.stripe.com/28EfZ98vB7Ls4Hq1Ze5J607';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script><!-- Ende Indices -->
 
   <!-- Krypto -->
   <h2>Krypto</h2>
@@ -525,10 +558,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBBTC">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-          <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/6oU4grbHN3vcddWeM05J602">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeBTC" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeBTC').addEventListener('click', function() {
+  const datenschutz4 = document.getElementById('chkDatenschutzBTC').checked;
+  const agb4 = document.getElementById('chkAGBBTC').checked;
 
+  if(datenschutz4 && agb4) {
+    window.location.href = 'https://buy.stripe.com/6oU4grbHN3vcddWeM05J602';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
     <div class="signal-card">
       <h3>ETH Informationen</h3>
       <p class="abo-details">
@@ -549,11 +593,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBETH">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-       
-          <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/00wcMXcLR9TA2zigU85J603">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeETH" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeETH').addEventListener('click', function() {
+  const datenschutz5 = document.getElementById('chkDatenschutzETH').checked;
+  const agb5 = document.getElementById('chkAGBETH').checked;
 
+  if(datenschutz5 && agb5) {
+    window.location.href = 'https://buy.stripe.com/00wcMXcLR9TA2zigU85J603';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
     <div class="signal-card">
       <h3>XRP Informationen</h3>
       <p class="abo-details">
@@ -574,10 +628,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBXRP">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-         <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/aFa28jh279TA8XGbzO5J604">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeXRP" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeXRP').addEventListener('click', function() {
+  const datenschutz6 = document.getElementById('chkDatenschutzXRP').checked;
+  const agb6 = document.getElementById('chkAGBXRP').checked;
 
+  if(datenschutz6 && agb6) {
+    window.location.href = 'https://buy.stripe.com/aFa28jh279TA8XGbzO5J604';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
     <div class="signal-card">
       <h3>SOL Informationen</h3>
 <p class="abo-details">
@@ -598,10 +663,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hisich
   <input type="checkbox" id="chkAGBSOL">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-          <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/dRm4grcLR4zgb5OeM05J605">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeSOL" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeSOL').addEventListener('click', function() {
+  const datenschutz7 = document.getElementById('chkDatenschutzSOL').checked;
+  const agb7 = document.getElementById('chkAGBSOL').checked;
 
+  if(datenschutz7 && agb7) {
+    window.location.href = 'https://buy.stripe.com/dRm4grcLR4zgb5OeM05J605';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
     <div class="signal-card">
       <h3>DOGE Inforamtionen</h3>
 <p class="abo-details">
@@ -622,10 +698,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBDOGE">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-         <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/4gMcMX4fl1n41ve9rG5J606">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeDOGE" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeDOGE').addEventListener('click', function() {
+  const datenschutz8 = document.getElementById('chkDatenschutzDOGE').checked;
+  const agb8 = document.getElementById('chkAGBDOGE').checked;
 
+  if(datenschutz8 && agb8) {
+    window.location.href = 'https://buy.stripe.com/4gMcMX4fl1n41ve9rG5J606';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
     <div class="signal-card">
       <h3>Krypto Basis: BTC + ETH Inforamtionen</h3>
 <p class="abo-details">
@@ -646,10 +733,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBBE">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-     <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/8x228jbHN2r8fm4gU85J608">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeBE" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeBE').addEventListener('click', function() {
+  const datenschutz9 = document.getElementById('chkDatenschutzBE').checked;
+  const agb9 = document.getElementById('chkAGBBE').checked;
 
+  if(datenschutz9 && agb9) {
+    window.location.href = 'https://buy.stripe.com/8x228jbHN2r8fm4gU85J608';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
     <div class="signal-card">
       <h3>Krypto Duo: SOL + DOGE Informationen</h3>
       <p class="abo-details">
@@ -669,10 +767,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBSD">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-        <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/4gM5kv27d9TA3Dm5bq5J609">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeSD" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeSD').addEventListener('click', function() {
+  const datenschutz10 = document.getElementById('chkDatenschutzSD').checked;
+  const agb10 = document.getElementById('chkAGBSD').checked;
 
+  if(datenschutz10 && agb10) {
+    window.location.href = 'https://buy.stripe.com/4gM5kv27d9TA3Dm5bq5J609';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
     <div class="signal-card">
       <h3>Krypto Plus: BTC + ETH + XRP Informationen</h3>
       <p class="abo-details">
@@ -693,10 +802,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBBEX">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-         <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/aFa5kv7rx0j07TC47m5J60a">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeBEX" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeBEX').addEventListener('click', function() {
+  const datenschutz11 = document.getElementById('chkDatenschutzBEX').checked;
+  const agb11 = document.getElementById('chkAGBBEX').checked;
 
+  if(datenschutz11 && agb11) {
+    window.location.href = 'https://buy.stripe.com/aFa5kv7rx0j07TC47m5J60a';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
     <div class="signal-card">
       <h3>Krypto Komplett: BTC + ETH + XRP + SOL + DOGE Informationen</h3>
       <p class="abo-details">
@@ -717,10 +837,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBBEXSD">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-         <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/fZu8wH4fl7Ls1ve8nC5J60b">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeBEXSD" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeBEXSD').addEventListener('click', function() {
+  const datenschutz12 = document.getElementById('chkDatenschutzBEXSD').checked;
+  const agb12 = document.getElementById('chkAGBBEXSD').checked;
 
+  if(datenschutz12 && agb12) {
+    window.location.href = 'https://buy.stripe.com/fZu8wH4fl7Ls1ve8nC5J60b';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
   </div> <!-- Ende Krypto -->
 
   <!-- Indices + Krypto -->
@@ -747,10 +878,21 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <input type="checkbox" id="chkAGBall">
   Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
 </label><br>
-      <button type="button" class="subscribe-btn" data-stripe="https://buy.stripe.com/3cI5kveTZc1I2zibzO5J60c">Weiter zur Kasse</button>
+        <button type="button" id="btnSubscribeall" class="subscribe-btn">Weiter zur Kasse</button>
       </div>
     </div>
+<script>
+document.getElementById('btnSubscribeall').addEventListener('click', function() {
+  const datenschutz13 = document.getElementById('chkDatenschutzall').checked;
+  const agb13 = document.getElementById('chkAGBall').checked;
 
+  if(datenschutz13 && agb13) {
+    window.location.href = 'https://buy.stripe.com/3cI5kveTZc1I2zibzO5J60c';
+  } else {
+    alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
+  }
+});
+</script>
   </div> <!-- Ende Indices + Krypto -->
 
 
@@ -775,44 +917,6 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <p class="footer-copy">&copy; 2025 Silver Arrow – Alle Rechte vorbehalten.</p>
 </footer>
 
-<script>
-document.querySelectorAll('.subscribe-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card = btn.closest('.signal-card');
-    const container = card.querySelector('.subscribe-container');
-    const checkboxes = container.querySelectorAll('input[type="checkbox"]');
-    const datenschutz = checkboxes[0].checked;
-    const agb = checkboxes[1].checked;
-    const stripeLink = btn.dataset.stripe;
-
-    if(datenschutz && agb) {
-      window.location.href = `double-opt-in.html?stripe=${encodeURIComponent(stripeLink)}`;
-    } else {
-      alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
-    }
-  });
-});
-</script>
-
-
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
