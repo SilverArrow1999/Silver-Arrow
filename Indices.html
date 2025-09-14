@@ -542,17 +542,29 @@ document.getElementById('btnSubscribeSP').addEventListener('click', function() {
 </tbody>
 </table>
 
-<div class="signal-card">
-  <h3>NASDAQ 100 Signale</h3>
-  
-
-  <div class="subscribe-container">
-    <label><input type="checkbox" id="chkDatenschutzNSDQ"> Datenschutzerklärung</label><br>
-    <label><input type="checkbox" id="chkAGBNSDQ"> AGB akzeptieren</label><br>
-    <button type="button" id="btnSubscribeNSDQ" class="subscribe-btn">Signale abonnieren</button>
-  </div>
-</div>
-
+    <div class="signal-card">
+      <h3>NASDAQ 100 Informationen</h3>
+      <p class="abo-details">
+Preis: 19,99 € inkl. USt je Monat<br>
+Zahlungsintervall: monatlich im Voraus<br>
+Mindestlaufzeit: 1 Monat<br>
+Verlängerung: automatische Verlängerung um jeweils 1 Monat<br>
+Kündigungsfrist: jederzeit mit einer Frist von 1 Monat zum Ende des Abrechnungszeitraums<br>
+Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsichtlich NASDAQ 100
+</p>
+      
+      <div class="subscribe-container">
+                <label>
+  <input type="checkbox" id="chkDatenschutzNSDQ">
+  Ich habe die <a href="Datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen
+</label><br>
+<label>
+  <input type="checkbox" id="chkAGBNSDQ">
+  Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
+</label><br>
+        <button type="button" id="btnSubscribeNSDQ" class="subscribe-btn">Weiter zur Kasse</button>
+      </div>
+    </div>
 <script>
 document.getElementById('btnSubscribeNSDQ').addEventListener('click', function() {
   const datenschutz2 = document.getElementById('chkDatenschutzNSDQ').checked;
@@ -748,6 +760,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
