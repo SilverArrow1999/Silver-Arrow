@@ -299,9 +299,9 @@ footer .footer-copy {
     </ul>
   </nav>
 
- <main>
-  <h2>Kontaktieren Sie uns</h2>
-  <form action="https://formsubmit.co/information.silverarrow@gmail.com" method="POST" aria-label="Kontaktformular">
+<main>
+  <h2>Bevorzugten Informationskanal wählen</h2>
+  <form action="https://formsubmit.co/information.silverarrow@gmail.com" method="POST" aria-label="Informationskanal-Formular">
     <input type="hidden" name="_captcha" value="false" />
     <input type="hidden" name="_subject" value="Neuer Informationskanal über Silver Arrow" />
     <input type="hidden" name="_template" value="box" />
@@ -319,17 +319,14 @@ footer .footer-copy {
       <option value="Telegram">Telegram</option>
       <option value="Signal">Signal</option>
       <option value="WhatsApp">WhatsApp</option>
+      <option value="Instagram">Instagram</option>
     </select>
 
-    <!-- Zusätzliche Felder für Kanal-spezifische Infos -->
-    <label for="telegram">Telegram-Username (falls gewählt)</label>
-    <input type="text" id="telegram" name="telegram" placeholder="@username" />
-
-    <label for="signal">Signal-Nummer (falls gewählt)</label>
-    <input type="text" id="signal" name="signal" placeholder="+49..." />
-
-    <label for="whatsapp">WhatsApp-Nummer (falls gewählt)</label>
-    <input type="text" id="whatsapp" name="whatsapp" placeholder="+49..." />
+    <!-- Kanal-spezifische Felder, zunächst versteckt -->
+    <div id="channelExtra" style="display:none;">
+      <label id="channelLabel" for="channelInfo"></label>
+      <input type="text" id="channelInfo" name="channelInfo" placeholder="" />
+    </div>
 
     <label class="checkbox-label">
       <input type="checkbox" required />
@@ -342,7 +339,35 @@ footer .footer-copy {
   <div class="disclaimer">
     <p><strong>Hinweis:</strong> Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.</p>
   </div>
+
+  <script>
+    const channelSelect = document.getElementById('channel');
+    const extraDiv = document.getElementById('channelExtra');
+    const channelLabel = document.getElementById('channelLabel');
+    const channelInput = document.getElementById('channelInfo');
+
+    channelSelect.addEventListener('change', function() {
+      const value = this.value;
+
+      if (value === 'E-Mail' || value === '') {
+        extraDiv.style.display = 'none';
+        channelInput.required = false;
+      } else {
+        extraDiv.style.display = 'block';
+        channelInput.required = true;
+
+        if (value === 'Telegram' || value === 'Signal' || value === 'WhatsApp') {
+          channelLabel.textContent = value + " Nummer";
+          channelInput.placeholder = "+49...";
+        } else if (value === 'Instagram') {
+          channelLabel.textContent = "Instagram-Name";
+          channelInput.placeholder = "@username";
+        }
+      }
+    });
+  </script>
 </main>
+
 
   <img src="Logo Silver Arrow.png" alt="Hintergrundlogo" class="background-logo" />
 <footer>
