@@ -775,23 +775,23 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
   <p class="footer-copy">&copy; 2025 Silver Arrow – Alle Rechte vorbehalten.</p>
 </footer>
 
-<script>
 document.querySelectorAll('.subscribe-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.signal-card');
-    const datenschutz = card.querySelector('input[type="checkbox"]:nth-of-type(1)').checked;
-    const agb = card.querySelector('input[type="checkbox"]:nth-of-type(2)').checked;
+    const container = card.querySelector('.subscribe-container');
+    const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+    const datenschutz = checkboxes[0].checked;
+    const agb = checkboxes[1].checked;
     const stripeLink = btn.dataset.stripe;
 
     if(datenschutz && agb) {
-      // Weiterleitung zur Double-Opt-In-Seite, Stripe-Link als Parameter
       window.location.href = `double-opt-in.html?stripe=${encodeURIComponent(stripeLink)}`;
     } else {
       alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
     }
   });
 });
-</script>
+
 
 </body>
 </html>
