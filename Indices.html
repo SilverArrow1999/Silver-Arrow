@@ -676,21 +676,21 @@ labels: ['2020', '2021', '2022', '2023', '2024'],
 datasets: [
 {
 label: 'NASDAQ100 (Sparplan)',
-data: [30.56, 15.72, -15.14, 22.51, 12.42, 10.18],
+data: [30.56, 15.72, -15.14, 22.51, 12.42],
 backgroundColor: 'rgba(192,192,192,0.8)', // Silber
 borderColor: 'rgba(192,192,192,1)',
 borderWidth: 1
 },
 {
 label: 'NASDAQ100 (Strategie)',
-data: [89.11, 30.40, -28.61, 46.59, 29.24, 20.88],
+data: [89.11, 30.40, -28.61, 46.59, 29.24],
 backgroundColor: 'rgba(30, 144, 255, 0.7)', // Blau
 borderColor: 'rgba(30, 144, 255, 1)',
 borderWidth: 1
 },
 {
 label: 'Delta',
-data: [58.55, 14.68, -13.47, 24.09, 16.82, 10.70],
+data: [58.55, 14.68, -13.47, 24.09, 16.82],
 backgroundColor: function(context) {
 const value = context.raw;
 return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)'; // Grün oder Gelb
@@ -760,6 +760,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
