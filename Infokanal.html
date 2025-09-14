@@ -316,7 +316,6 @@ footer .footer-copy {
       <option value="">-- Bitte wählen --</option>
       <option value="email">E-Mail</option>
       <option value="telegram">Telegram</option>
-      <option value="signal">Signal</option>
       <option value="whatsapp">WhatsApp</option>
       <option value="instagram">Instagram</option>
     </select>
@@ -353,13 +352,10 @@ footer .footer-copy {
     } else if(selected === 'telegram') {
       additionalInfoDiv.innerHTML = `
         <label for="telegram">Telegram-Benutzername</label>
-        <input type="text" id="telegram" name="telegram" placeholder="@Benutzername" required />
+       <input type="text" id="telegram" name="telegram" placeholder="+49..." required />
       `;
-    } else if(selected === 'signal') {
-      additionalInfoDiv.innerHTML = `
-        <label for="signal">Signal-Telefonnummer</label>
-        <input type="text" id="signal" name="signal" placeholder="+49..." required />
-      `;
+    
+    
     } else if(selected === 'whatsapp') {
       additionalInfoDiv.innerHTML = `
         <label for="whatsapp">WhatsApp-Telefonnummer</label>
