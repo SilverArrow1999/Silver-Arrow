@@ -198,7 +198,7 @@
   nav {
     padding: 10px;
   }
-  .nav-list {
+  nav .nav-list {
     flex-direction: column;
     gap: 15px;
     align-items: center;
@@ -210,6 +210,8 @@
     margin-left: 0;
     margin-right: 0;
   }
+
+  /* Für Startseite */
   .intro {
     max-width: 100%;
     font-size: 1rem;
@@ -224,15 +226,78 @@
     width: 100%;
     padding: 20px;
   }
+   .fußnote {
+    max-width: 100%;
+    padding: 0 10px;
+    font-size: 0.85rem;
+  }
   .disclaimer {
     max-width: 100%;
     padding: 0 10px;
     font-size: 0.85rem;
   }
+
+  /* Für Strategie-Seite */
+  .strategy-overview {
+    padding: 15px;
+    margin: 10px;
+  }
+  table.performance-table {
+    font-size: 0.8rem;
+  }
+  table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+}
+
+ @media (max-width: 600px) {
+  ...
+  .signal-section {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;            /* Container nimmt volle Breite */
+    box-sizing: border-box; /* Padding/Borders werden mitgerechnet */
+    padding: 0 10px;        /* Innenabstand links/rechts */
+  }
+  .signal-card {
+    width: 100%;            /* Volle Breite des Containers */
+    max-width: 400px;       /* max. Breite, damit es nicht zu breit wird */
+    box-sizing: border-box;
+    margin: 0 auto;         /* zentriert die Karte horizontal */
+    padding: 20px;          /* Innenabstand in der Karte */
+  }
+  ...
+}
+
+.chart-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+canvas {
+  width: 600px !important;  /* Fixe Breite für Scrollen */
+  height: 300px !important; /* Höhe wie vorher, damit die Balken gut sichtbar sind */
+}
+
+
+
   .background-logo {
     top: 100px;
     width: 100%;
     max-width: none;
+  }
+}
+  @media (max-width: 768px) {
+  .chart-container {
+    overflow-x: auto;       /* horizontales Scrollen erlauben */
+    -webkit-overflow-scrolling: touch; /* für flüssiges Scrollen auf iOS */
+    width: 100%;            /* volle Breite des Containers */
+  }
+  .chart-container canvas {
+    min-width: 900px;       /* mindestens so breit wie dein Chart */
   }
 }
 footer {
@@ -260,7 +325,10 @@ footer .footer-copy {
   color: #999;
 }
 
-  </style>
+
+  
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
