@@ -543,7 +543,7 @@ document.getElementById('btnSubscribeSP').addEventListener('click', function() {
 <td>-15,14%</td>
 <td>22,51%</td>
 <td>12,42%</td>
-<td>10,18%</td>
+
 </tr>
 <tr>
 <td>NASDAQ100 (Strategie)</td>
@@ -552,7 +552,7 @@ document.getElementById('btnSubscribeSP').addEventListener('click', function() {
 <td>-28,61%</td>
 <td>46,59%</td>
 <td>29,24%</td>
-<td>20,88%</td>
+
 </tr>
 <tr>
 <td>Delta</td>
@@ -561,7 +561,7 @@ document.getElementById('btnSubscribeSP').addEventListener('click', function() {
 <td class="negative">-13,47%</td>
 <td class="positive">24,09%</td>
 <td class="positive">16,82%</td>
-<td class="positive">10,70%</td>
+
 </tr>
 </tbody>
 </table>
@@ -621,21 +621,21 @@ labels: ['2020', '2021', '2022', '2023', '2024'],
 datasets: [
 {
 label: 'S&P500 (Sparplan)',
-data: [19.7, 14.2, -6.95, 12.56, 10.0, 1.25],
+data: [19.7, 14.2, -6.95, 12.56, 10.0],
 backgroundColor: 'rgba(192,192,192,0.8)',
 borderColor: 'rgba(192,192,192,1)',
 borderWidth: 1
 },
 {
 label: 'S&P500 (Strategie)',
-data: [50.78, 30.09, -12.95, 25.66, 30.63, 3.59],
+data: [50.78, 30.09, -12.95, 25.66, 30.63],
 backgroundColor: 'rgba(30, 144, 255, 0.7)', // Blau
 borderColor: 'rgba(30, 144, 255, 1)',
 borderWidth: 1
 },
 {
 label: 'Delta',
-data: [31.07, 15.89, -6.00, 13.09, 20.63, 2.35],
+data: [31.07, 15.89, -6.00, 13.09, 20.63],
 backgroundColor: function(context) {
 const value = context.raw;
 return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)'; // grün oder gelb
@@ -784,6 +784,7 @@ color: '#333'
 
 </body>
 </html>
+
 
 
 
