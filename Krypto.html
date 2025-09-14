@@ -667,39 +667,41 @@ document.getElementById('btnSubscribeETH').addEventListener('click', function() 
 </tbody>
 </table>
 
-<div class="signal-card">
-  <h3>XRP Signale</h3>
-<p class="abo-details">
+  <div class="signal-card">
+      <h3>XRP Informationen</h3>
+      <p class="abo-details">
 Preis: 19,99 € inkl. USt je Monat<br>
 Zahlungsintervall: monatlich im Voraus<br>
 Mindestlaufzeit: 1 Monat<br>
 Verlängerung: automatische Verlängerung um jeweils 1 Monat<br>
 Kündigungsfrist: jederzeit mit einer Frist von 1 Monat zum Ende des Abrechnungszeitraums<br>
-Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow
+Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsichtlich XRP
 </p>
-
- 
-
-  <div class="subscribe-container">
-    <label><input type="checkbox" id="chkDatenschutzXRP"> Datenschutzerklärung</label><br>
-    <label><input type="checkbox" id="chkAGBXRP"> AGB akzeptieren</label><br>
-    <button type="button" id="btnSubscribeXRP" class="subscribe-btn">Weiter zur Kasse</button>
-  </div>
-</div>
-
+      
+      <div class="subscribe-container">
+                  <label>
+  <input type="checkbox" id="chkDatenschutzXRP">
+  Ich habe die <a href="Datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen
+</label><br>
+<label>
+  <input type="checkbox" id="chkAGBXRP">
+  Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
+</label><br>
+        <button type="button" id="btnSubscribeXRP" class="subscribe-btn">Weiter zur Kasse</button>
+      </div>
+    </div>
 <script>
 document.getElementById('btnSubscribeXRP').addEventListener('click', function() {
-  const datenschutz3 = document.getElementById('chkDatenschutzXRP').checked;
-  const agb3 = document.getElementById('chkAGBXRP').checked;
+  const datenschutz6 = document.getElementById('chkDatenschutzXRP').checked;
+  const agb6 = document.getElementById('chkAGBXRP').checked;
 
-  if(datenschutz3 && agb3) {
-    window.location.href = 'https://buy.stripe.com/aFa28jh279TA8XGbzO5J604'; // 👈 Stripe-Link hier einsetzen
+  if(datenschutz6 && agb6) {
+    window.location.href = 'https://buy.stripe.com/aFa28jh279TA8XGbzO5J604';
   } else {
     alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
   }
 });
 </script>
-
 <div class="chart-container">
   <canvas id="SOLChart" width="900" height="450" style="display: block; margin: 0 auto 40px auto;"></canvas>
 </div>
@@ -1241,6 +1243,7 @@ const DOGEChart = new Chart(ctxDOGE, {
 
 </body>
 </html>
+
 
 
 
