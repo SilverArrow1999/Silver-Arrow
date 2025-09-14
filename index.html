@@ -327,7 +327,10 @@ user-select: none;
   .feature-card {
     width: 100%;
     padding: 20px;
-  }
+    box-sizing: border-box; /* wichtig, damit padding in width gerechnet wird */
+    margin: 0 auto; /* optional, um die Box zentriert zu halten */
+}
+
   .fußnote {
     max-width: 100%;
     padding: 0 10px;
