@@ -742,33 +742,36 @@ document.getElementById('btnSubscribeXRP').addEventListener('click', function() 
 </tbody>
 </table>
 
-<div class="signal-card">
-  <h3>SOL Signale</h3>
+ <div class="signal-card">
+      <h3>SOL Informationen</h3>
 <p class="abo-details">
 Preis: 19,99 € inkl. USt je Monat<br>
 Zahlungsintervall: monatlich im Voraus<br>
 Mindestlaufzeit: 1 Monat<br>
 Verlängerung: automatische Verlängerung um jeweils 1 Monat<br>
 Kündigungsfrist: jederzeit mit einer Frist von 1 Monat zum Ende des Abrechnungszeitraums<br>
-Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow
+Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hisichtlich SOL
 </p>
-
-  
-
-  <div class="subscribe-container">
-    <label><input type="checkbox" id="chkDatenschutzSOL"> Datenschutzerklärung</label><br>
-    <label><input type="checkbox" id="chkAGBSOL"> AGB akzeptieren</label><br>
-    <button type="button" id="btnSubscribeSOL" class="subscribe-btn">Weiter zur Kasse</button>
-  </div>
-</div>
-
+      
+      <div class="subscribe-container">
+                    <label>
+  <input type="checkbox" id="chkDatenschutzSOL">
+  Ich habe die <a href="Datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen
+</label><br>
+<label>
+  <input type="checkbox" id="chkAGBSOL">
+  Ich akzeptiere die <a href="AGBseite.html" target="_blank">AGB</a>
+</label><br>
+        <button type="button" id="btnSubscribeSOL" class="subscribe-btn">Weiter zur Kasse</button>
+      </div>
+    </div>
 <script>
 document.getElementById('btnSubscribeSOL').addEventListener('click', function() {
-  const datenschutz4 = document.getElementById('chkDatenschutzSOL').checked;
-  const agb4 = document.getElementById('chkAGBSOL').checked;
+  const datenschutz7 = document.getElementById('chkDatenschutzSOL').checked;
+  const agb7 = document.getElementById('chkAGBSOL').checked;
 
-  if(datenschutz4 && agb4) {
-    window.location.href = 'https://buy.stripe.com/dRm4grcLR4zgb5OeM05J605'; // 👈 Deinen Stripe-Link einsetzen
+  if(datenschutz7 && agb7) {
+    window.location.href = 'https://buy.stripe.com/dRm4grcLR4zgb5OeM05J605';
   } else {
     alert('Bitte akzeptieren Sie die Datenschutzerklärung und die AGBs, um fortzufahren.');
   }
@@ -1243,6 +1246,7 @@ const DOGEChart = new Chart(ctxDOGE, {
 
 </body>
 </html>
+
 
 
 
