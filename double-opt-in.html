@@ -95,4 +95,32 @@ input[type="email"] {
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_subject" value="Silver Arrow Double-Opt-In">
     <input type="hidden" name="_template" value="box">
-    <input type="hidden" name="_autoresponse" id="autorespo_
+    <input type="hidden" name="_autoresponse" value="Vielen Dank! Sie erhalten gleich eine Bestätigungsmail.">
+    <input type="hidden" name="_next" id="nextUrl" value="">
+
+    <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+    <button type="submit" class="subscribe-btn">Anmelden</button>
+  </form>
+
+  <p class="disclaimer">Ihre E-Mail wird ausschließlich für den Double-Opt-In Prozess verwendet und nicht weitergegeben.</p>
+</main>
+
+<script>
+  // Stripe-Link aus URL-Parameter übernehmen
+  const params = new URLSearchParams(window.location.search);
+  const stripeUrl = params.get('stripe');
+  if(stripeUrl) {
+    // in _next Feld einsetzen, damit Formsubmit nach Absenden weiterleitet
+    document.getElementById('nextUrl').value = stripeUrl;
+  }
+
+  // Optional: Formular validieren & alert, falls kein Stripe-Link
+  document.getElementById('optInForm').addEventListener('submit', function(e){
+    if(!stripeUrl) {
+      e.preventDefault();
+      alert('Fehler: Kein Stripe-Link übergeben.');
+    }
+  });
+</script>
+</body>
+</html>
