@@ -300,33 +300,29 @@ footer .footer-copy {
   </nav>
 
 <main>
-  <h2>Bevorzugten Informationskanal wählen</h2>
-  <form action="https://formsubmit.co/information.silverarrow@gmail.com" method="POST" aria-label="Informationskanal-Formular">
+  <h2>Kontaktieren Sie uns</h2>
+  <form action="https://formsubmit.co/information.silverarrow@gmail.com" method="POST" aria-label="Kanal-Auswahl">
     <input type="hidden" name="_captcha" value="false" />
-    <input type="hidden" name="_subject" value="Neuer Informationskanal über Silver Arrow" />
+    <input type="hidden" name="_subject" value="Neue Nachricht über das Kanal-Auswahl-Formular Silver Arrow" />
     <input type="hidden" name="_template" value="box" />
 
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Ihr Name" required />
+    <!-- Vertragsnummer -->
+    <label for="contract">Vertragsnummer</label>
+    <input type="text" id="contract" name="contract" placeholder="Ihre Vertragsnummer" required />
 
-    <label for="email">E-Mail</label>
-    <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
-
+    <!-- Kanal auswählen -->
     <label for="channel">Bevorzugter Informationskanal</label>
     <select id="channel" name="channel" required>
-      <option value="">Bitte wählen...</option>
-      <option value="E-Mail">E-Mail (Standard)</option>
-      <option value="Telegram">Telegram</option>
-      <option value="Signal">Signal</option>
-      <option value="WhatsApp">WhatsApp</option>
-      <option value="Instagram">Instagram</option>
+      <option value="">-- Bitte wählen --</option>
+      <option value="email">E-Mail</option>
+      <option value="telegram">Telegram</option>
+      <option value="signal">Signal</option>
+      <option value="whatsapp">WhatsApp</option>
+      <option value="instagram">Instagram</option>
     </select>
 
-    <!-- Kanal-spezifische Felder, zunächst versteckt -->
-    <div id="channelExtra" style="display:none;">
-      <label id="channelLabel" for="channelInfo"></label>
-      <input type="text" id="channelInfo" name="channelInfo" placeholder="" />
-    </div>
+    <!-- Dynamisches Feld für zusätzliche Info -->
+    <div id="additional-info"></div>
 
     <label class="checkbox-label">
       <input type="checkbox" required />
@@ -337,36 +333,47 @@ footer .footer-copy {
   </form>
 
   <div class="disclaimer">
-    <p><strong>Hinweis:</strong> Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.</p>
+    <p><strong>Hinweis:</strong> Ihre Vertragsnummer wird ausschließlich zur Zuordnung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.</p>
   </div>
-
-  <script>
-    const channelSelect = document.getElementById('channel');
-    const extraDiv = document.getElementById('channelExtra');
-    const channelLabel = document.getElementById('channelLabel');
-    const channelInput = document.getElementById('channelInfo');
-
-    channelSelect.addEventListener('change', function() {
-      const value = this.value;
-
-      if (value === 'E-Mail' || value === '') {
-        extraDiv.style.display = 'none';
-        channelInput.required = false;
-      } else {
-        extraDiv.style.display = 'block';
-        channelInput.required = true;
-
-        if (value === 'Telegram' || value === 'Signal' || value === 'WhatsApp') {
-          channelLabel.textContent = value + " Nummer";
-          channelInput.placeholder = "+49...";
-        } else if (value === 'Instagram') {
-          channelLabel.textContent = "Instagram-Name";
-          channelInput.placeholder = "@username";
-        }
-      }
-    });
-  </script>
 </main>
+
+<script>
+  const channelSelect = document.getElementById('channel');
+  const additionalInfoDiv = document.getElementById('additional-info');
+
+  channelSelect.addEventListener('change', function() {
+    const selected = this.value;
+    additionalInfoDiv.innerHTML = ''; // Feld zurücksetzen
+
+    if(selected === 'email') {
+      additionalInfoDiv.innerHTML = `
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
+      `;
+    } else if(selected === 'telegram') {
+      additionalInfoDiv.innerHTML = `
+        <label for="telegram">Telegram-Benutzername</label>
+        <input type="text" id="telegram" name="telegram" placeholder="@Benutzername" required />
+      `;
+    } else if(selected === 'signal') {
+      additionalInfoDiv.innerHTML = `
+        <label for="signal">Signal-Telefonnummer</label>
+        <input type="text" id="signal" name="signal" placeholder="+49..." required />
+      `;
+    } else if(selected === 'whatsapp') {
+      additionalInfoDiv.innerHTML = `
+        <label for="whatsapp">WhatsApp-Telefonnummer</label>
+        <input type="text" id="whatsapp" name="whatsapp" placeholder="+49..." required />
+      `;
+    } else if(selected === 'instagram') {
+      additionalInfoDiv.innerHTML = `
+        <label for="instagram">Instagram-Name</label>
+        <input type="text" id="instagram" name="instagram" placeholder="@Benutzername" required />
+      `;
+    }
+  });
+</script>
+
 
 
 
