@@ -748,7 +748,7 @@ document.getElementById('btnSubscribeXRP').addEventListener('click', function() 
   <td>Delta</td>
   <td class="positive">2701,20%</td>
   <td class="positive">12,02%</td>
-  <td class="negative">37,95%</td>
+  <td class="positive">37,95%</td>
   <td class="positive">44,64%</td>
 </tr>
 </tbody>
@@ -851,7 +851,7 @@ Leistungsmerkmale: Information über Handelsaktivitäten von Silver Arrow hinsic
       
       <div class="subscribe-container">
                    <label>
-  <input type="checkbox" id="chkDatenschutzSOG">
+  <input type="checkbox" id="chkDatenschutzDOGE">
   Ich habe die <a href="Datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen
 </label><br>
 <label>
@@ -904,18 +904,25 @@ backgroundColor: 'rgba(30, 144, 255, 0.7)', // Blau
 borderColor: 'rgba(30, 144, 255, 1)',
 borderWidth: 1
 },
+
+
 {
-label: 'Delta',
-data: [46.76, 58.97, 79.95, -5.28, -5.21, -1.94, 12.79],
-backgroundColor: function(context) {
-const value = context.raw;
-return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)'; // grün oder gelb
+  label: 'Delta positiv',
+  data: [46.76, 58.97, 79.95, null, null, null, 12.79],
+  backgroundColor: 'rgba(76, 175, 80, 0.7)',
+  borderColor: 'rgba(76, 175, 80, 1)',
+  borderWidth: 1
 },
-borderColor: function(context) {
-const value = context.raw;
-return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
-},
-borderWidth: 1
+{
+  label: 'Delta negativ',
+  data: [null, null, null, -5.28, -5.21, -1.94, null],
+  backgroundColor: 'rgba(255, 193, 7, 0.7)',
+  borderColor: 'rgba(255, 193, 7, 1)',
+  borderWidth: 1
+}
+
+  
+
 }
 ]
 },
@@ -983,18 +990,25 @@ backgroundColor: 'rgba(30, 144, 255, 0.7)', // Blau
 borderColor: 'rgba(30, 144, 255, 1)',
 borderWidth: 1
 },
+
+
 {
-label: 'Delta',
-data: [34.66, 66.32, 362.53, 36.10, 15.04, -17.07, 39.25],
-backgroundColor: function(context) {
-const value = context.raw;
-return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)'; // Grün oder Gelb
+  label: 'Delta positiv',
+  data: [34.66, 66.32, 362.53, 36.10, 15.04, null, 39.25],
+  backgroundColor: 'rgba(76, 175, 80, 0.7)',
+  borderColor: 'rgba(76, 175, 80, 1)',
+  borderWidth: 1
 },
-borderColor: function(context) {
-const value = context.raw;
-return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
-},
-borderWidth: 1
+{
+  label: 'Delta negativ',
+  data: [null, null, null, null, null, -17.07, null],
+  backgroundColor: 'rgba(255, 193, 7, 0.7)',
+  borderColor: 'rgba(255, 193, 7, 1)',
+  borderWidth: 1
+}
+
+  
+
 }
 ]
 },
@@ -1063,18 +1077,25 @@ const XRPChart = new Chart(ctxXRP, {
         borderColor: 'rgba(30, 144, 255, 1)',
         borderWidth: 1
       },
-      {
-        label: 'Delta',
-        data: [82.53, 11.04, 237.43, 85.68, 17.95, -15.79, -49.39],
-        backgroundColor: function(context) {
-          const value = context.raw;
-          return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)';
-        },
-        borderColor: function(context) {
-          const value = context.raw;
-          return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
-        },
-        borderWidth: 1
+   
+
+{
+  label: 'Delta positiv',
+  data: [82.53, 11.04, 237.43, 85.68, 17.95, null, null],
+  backgroundColor: 'rgba(76, 175, 80, 0.7)',
+  borderColor: 'rgba(76, 175, 80, 1)',
+  borderWidth: 1
+},
+{
+  label: 'Delta negativ',
+  data: [null, null, null, null, null, -15.79, -49.39],
+  backgroundColor: 'rgba(255, 193, 7, 0.7)',
+  borderColor: 'rgba(255, 193, 7, 1)',
+  borderWidth: 1
+}
+
+        
+        
       }
     ]
   },
@@ -1131,18 +1152,25 @@ const SOLChart = new Chart(ctxSOL, {
         borderColor: 'rgba(30, 144, 255, 1)',
         borderWidth: 1
       },
-      {
-        label: 'Delta',
-        data: [2701.20, 12.02, 37.95, 44.64],
-        backgroundColor: function(context) {
-          const value = context.raw;
-          return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)';
-        },
-        borderColor: function(context) {
-          const value = context.raw;
-          return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
-        },
-        borderWidth: 1
+   
+
+{
+  label: 'Delta positiv',
+  data: [2701.20, 12.02, 37.95, 44.64],
+  backgroundColor: 'rgba(76, 175, 80, 0.7)',
+  borderColor: 'rgba(76, 175, 80, 1)',
+  borderWidth: 1
+},
+{
+  label: 'Delta negativ',
+  data: [null, null, null, null],
+  backgroundColor: 'rgba(255, 193, 7, 0.7)',
+  borderColor: 'rgba(255, 193, 7, 1)',
+  borderWidth: 1
+}
+
+        
+       
       }
     ]
   },
@@ -1199,18 +1227,25 @@ const DOGEChart = new Chart(ctxDOGE, {
         borderColor: 'rgba(30, 144, 255, 1)',
         borderWidth: 1
       },
-      {
-        label: 'Delta',
-        data: [123.97, -8.49, -2.50, 202.78],
-        backgroundColor: function(context) {
-          const value = context.raw;
-          return value >= 0 ? 'rgba(76, 175, 80, 0.7)' : 'rgba(255, 193, 7, 0.7)';
-        },
-        borderColor: function(context) {
-          const value = context.raw;
-          return value >= 0 ? 'rgba(76, 175, 80, 1)' : 'rgba(255, 193, 7, 1)';
-        },
-        borderWidth: 1
+   
+
+{
+  label: 'Delta positiv',
+  data: [123.97, null, null, 202.78],
+  backgroundColor: 'rgba(76, 175, 80, 0.7)',
+  borderColor: 'rgba(76, 175, 80, 1)',
+  borderWidth: 1
+},
+{
+  label: 'Delta negativ',
+  data: [null, -8.49, -2.50, null],
+  backgroundColor: 'rgba(255, 193, 7, 0.7)',
+  borderColor: 'rgba(255, 193, 7, 1)',
+  borderWidth: 1
+}
+
+        
+        
       }
     ]
   },
@@ -1263,6 +1298,7 @@ const DOGEChart = new Chart(ctxDOGE, {
 
 </body>
 </html>
+
 
 
 
